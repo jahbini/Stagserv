@@ -30,7 +30,9 @@ var routes = {
  
 // Bind Routes
 exports = module.exports = function(app) {
+    var statics = require('serve-static');
     
-    app.get('/', routes.views.index);
+    app.get('/turonda', routes.views.index);
+    app.get('/', statics('./public',{'index':'stagapp.html'}));
     
-}
+};
