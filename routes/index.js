@@ -19,7 +19,7 @@ keystone.set('500', function(err, req, res, next) {
         message = err.message;
         err = err.stack;
     }
-    console.log("error from " + err.message+popeye.doyle);
+    console.log("error from " + err.message);
     res.err(err, title, message);
 });
  
@@ -32,7 +32,7 @@ var routes = {
 exports = module.exports = function(app) {
     var statics = require('serve-static');
     
-    app.get('/turonda', routes.views.index);
+    app.get('/sample', routes.views.index);
     app.get('/', statics('./public',{'index':'stagapp.html'}));
     
 };
