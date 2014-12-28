@@ -34,5 +34,5 @@ exports = module.exports = function(app) {
     
     app.get('/sample', routes.views.index);
     app.get('/', statics('./public',{'index':'stagapp.html'}));
-    
+    app.post('/trajectory', routes.views.trajectory);
 };
