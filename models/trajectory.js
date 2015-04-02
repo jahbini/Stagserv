@@ -21,7 +21,7 @@ var Trajectory = new keystone.List('Trajectory');
         password:{type:Types.Text},
         patientID:{type:Types.Text},
         testID:{type:Types.Text},
-        deviceUUID:{type:Types.Text},
+        sensorUUID:{type:Types.Text},
         platformUUID:{type:Types.Text}
         /*
         readings:{type:Types.Code,lang:"js"}
