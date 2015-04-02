@@ -17,9 +17,12 @@ var Trajectory = new keystone.List('Trajectory');
         captureDate: {type: Types.Datetime,default:Date.now,index:true},
         readings:{type:Types.Text},
         user:{type:Types.Text},
+        hostUrl:{type:Types.Text},
         password:{type:Types.Text},
         patientID:{type:Types.Text},
-        testID:{type:Types.Text}
+        testID:{type:Types.Text},
+        deviceUUID:{type:Types.Text},
+        platformUUID:{type:Types.Text}
         /*
         readings:{type:Types.Code,lang:"js"}
         readings:{type:Types.Relationship, ref:'Sample',many:true}
