@@ -20,5 +20,9 @@
     "underscore":"latest",
     "keystone": "latest",
     "serve-static":"latest"
-  }
+  },
+  "devDependencies": {
+    "findit2":"latest",
+    "printit":"latest"
+    }
 }
