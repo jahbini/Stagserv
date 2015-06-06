@@ -23,10 +23,7 @@
       if (err) {
         console.log(err);
       } else {
-        _.each(clinics, function(what) {
-          console.log(what);
-          console.log('--------------');
-        });
+        res.send(clinics);
       }
     });
     console.log('Clinic model queried');
