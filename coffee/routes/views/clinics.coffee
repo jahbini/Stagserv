@@ -1,3 +1,4 @@
+# vim: et:ts=2:sw=2:sts=2:nowrap
 keystone = require('keystone')
 Clinics = keystone.list('Clinic')
 _ = require('underscore')
@@ -12,10 +13,7 @@ base.exports = (req, res) ->
       console.log err
       return
     else
-      _.each clinics, (what) ->
-        console.log what
-        console.log '--------------'
-        return
+      res.send(clinics)
       return
   console.log 'Clinic model queried'
   return
