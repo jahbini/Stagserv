@@ -19,7 +19,7 @@
   base.exports = function(req, res) {
     var view;
     view = new keystone.View(req, res);
-    Clinics.model.find().populate('clinicians').populate('clients').exec(function(err, clinics) {
+    Clinics.model.find().exec(function(err, clinics) {
       if (err) {
         console.log(err);
       } else {

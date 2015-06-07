@@ -8,7 +8,7 @@ if module?.exports? then base = module
 
 base.exports = (req, res) ->
   view = new (keystone.View)(req, res)
-  Clinics.model.find().populate('clinicians').populate('clients').exec (err, clinics) ->
+  Clinics.model.find().exec (err, clinics) ->
     if err
       console.log err
       return
