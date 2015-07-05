@@ -12,7 +12,7 @@
     location: {
       type: Types.Text,
       index: true,
-      initial: false
+      initial: true
     },
     name: {
       required: true,

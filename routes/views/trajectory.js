@@ -22,10 +22,14 @@
     t.save(function(err) {
       if (err) {
         console.error(err);
-        view.render('index');
+        res.status(500).send({
+          error: err
+        });
       } else {
         console.log('Data Trajectory added ' + ' to the database.');
-        view.render('index');
+        res.status(200).send({
+          message: "OK"
+        });
       }
     });
   };

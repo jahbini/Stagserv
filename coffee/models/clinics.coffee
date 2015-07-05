@@ -6,7 +6,7 @@ Clinic.add
     type: Types.Key
     required: true
     index: true
-    initial: false
+    initial: true
   name: type: Types.Text
   clinicians:
     type: Types.Relationship
