@@ -2,12 +2,12 @@ keystone = require('keystone')
 Types = keystone.Field.Types
 Clinic = new (keystone.List)('Clinic', {})
 Clinic.add
-  name: type: Types.Text
   location:
     type: Types.Key
     required: true
     index: true
     initial: false
+  name: type: Types.Text
   clinicians:
     type: Types.Relationship
     ref: 'User'

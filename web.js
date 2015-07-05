@@ -8,6 +8,7 @@
 
   keystone.init({
     'name': 'StagServExpress',
+    'port': 80,
     'favicon': 'public/favicon.ico',
     'less': 'public',
     'static': ['public'],
