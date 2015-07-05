@@ -16,7 +16,7 @@
       type: Types.Key,
       required: true,
       index: true,
-      initial: false
+      initial: true
     },
     clinicians: {
       type: Types.Relationship,
