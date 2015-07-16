@@ -1,6 +1,7 @@
 keystone = require('keystone')
 Types = keystone.Field.Types
-Clinic = new (keystone.List)('Clinic', {})
+Clinic = new (keystone.List) 'Clinic', 
+   drilldown: "clinicians clients" 
 Clinic.add
   name: type: Types.Text
   location:

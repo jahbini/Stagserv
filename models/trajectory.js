@@ -20,7 +20,9 @@
   Sample.register();
    */
 
-  Trajectory = new keystone.List('Trajectory');
+  Trajectory = new keystone.List('Trajectory', {
+    drilldown: "patientID clinician"
+  });
 
   Trajectory.add({
     captureDate: {
@@ -31,8 +33,9 @@
     readings: {
       type: Types.Text
     },
-    user: {
-      type: Types.Text
+    clinician: {
+      type: Types.Relationship,
+      ref: 'User'
     },
     hostUrl: {
       type: Types.Text
@@ -41,12 +44,10 @@
       type: Types.Text
     },
     patientID: {
-      type: Types.Text
+      type: Types.Relationship,
+      ref: 'User'
     },
     testID: {
-      type: Types.Text
-    },
-    sensorUUID: {
       type: Types.Text
     },
     platformUUID: {
