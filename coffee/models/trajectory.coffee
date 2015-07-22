@@ -1,3 +1,7 @@
+###
+# vim: et:ts=2:sw=2:sts=2
+###
+
 keystone = require('keystone')
 Types = keystone.Field.Types
 
@@ -16,6 +20,7 @@ Sample.register();
 
 Trajectory = new (keystone.List) 'Trajectory',
   drilldown: "patientID clinician"
+
 Trajectory.add
   captureDate:
     type: Types.Datetime
@@ -32,4 +37,6 @@ Trajectory.add
     ref: 'User'
   testID: type: Types.Text
   platformUUID: type: Types.Text
+
+Trajectory.defaultColumns = 'captureDate, clinician, testID'
 Trajectory.register()

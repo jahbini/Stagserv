@@ -1,3 +1,7 @@
+###
+# vim: et:ts=2:sw=2:sts=2
+###
+
 keystone = require('keystone')
 Types = keystone.Field.Types
 Clinic = new (keystone.List) 'Clinic', 
