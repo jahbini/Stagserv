@@ -19,7 +19,8 @@ Sample.register();
 ###
 
 Trajectory = new (keystone.List) 'Trajectory',
-  drilldown: "patientID clinician"
+  drilldown: "client clinician"
+  plural: "Trajectories"
 
 Trajectory.add
   captureDate:
@@ -32,7 +33,7 @@ Trajectory.add
     ref: 'User'
   hostUrl: type: Types.Text
   password: type: Types.Text
-  patientID: 
+  client: 
     type: Types.Relationship
     ref: 'User'
   testID: type: Types.Text

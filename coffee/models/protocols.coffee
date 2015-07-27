@@ -1,3 +1,7 @@
+###
+# vim: et:ts=2:sw=2:sts=2
+###
+
 keystone = require('keystone')
 Types = keystone.Field.Types
 
@@ -14,10 +18,18 @@ Sample.add ({
 Sample.register();
 ###
 
-Protocol = new (keystone.List)('Protocol')
+Protocol = new keystone.List 'Protocol',
+  nocreate: false
+  nodelete: false 
+
 Protocol.add
   name:
     type: Types.Text
+    required: true
     index: true
-  sensorCount: type: Types.Integer
+    unique: true
+    default: "Other"
+  comments: type: Types.Text
+
+Protocol.defaultColumns = 'name, comments'
 Protocol.register()

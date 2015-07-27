@@ -13,7 +13,7 @@ User.add
   email:
     type: Types.Email
     initial: true
-    required: true
+    required: false
     index: true
   password:
     type: Types.Password
