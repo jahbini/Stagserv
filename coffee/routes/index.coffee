@@ -33,6 +33,7 @@ temp = (app) ->
   app.get '/', statics('./public', 'index': 'stagapp.html')
   app.post '/trajectory', routes.views.trajectory
   app.get '/clinics', routes.views.clinics
+  app.get '/protocols', routes.views.protocols
   app.get '/sensor-tag/:id', routes.views.sensorTag
   app.get '/user/:id', routes.views.user
   return

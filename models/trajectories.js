@@ -49,7 +49,7 @@
     password: {
       type: Types.Text
     },
-    patientID: {
+    client: {
       type: Types.Relationship,
       ref: 'User'
     },
