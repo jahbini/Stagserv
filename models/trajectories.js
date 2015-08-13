@@ -39,6 +39,10 @@
     readings: {
       type: Types.Text
     },
+    clinic: {
+      type: Types.Relationship,
+      ref: 'Clinic'
+    },
     clinician: {
       type: Types.Relationship,
       ref: 'User'

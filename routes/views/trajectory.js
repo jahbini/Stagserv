@@ -5,13 +5,15 @@
  */
 
 (function() {
-  var Trajectory, User, base, keystone, winston;
+  var Clinic, Trajectory, User, base, keystone, winston;
 
   keystone = require('keystone');
 
   Trajectory = keystone.list('Trajectory');
 
   User = keystone.list('User');
+
+  Clinic = keystone.list('Clinic');
 
   winston = require('winston');
 
@@ -44,8 +46,8 @@
   }
 
   base.exports = function(req, res) {
-    var bodyCheck, client, clinician, loggingData, t, view;
-    clinician = client = false;
+    var bodyCheck, client, clinic, clinician, t, view;
+    clinic = clinician = client = false;
     bodyCheck = function(body) {
       var summary;
       summary = {};
@@ -55,6 +57,10 @@
       if (!client) {
         return;
       }
+      if (!clinic) {
+        return;
+      }
+      summary.clinic = clinic.name;
       summary.client = client.first + " " + client.last;
       summary.clinician = clinician.first + " " + clinician.last;
       summary.readings = "http://sensor.retrotope.com/keystone/trajectory/" + body.id;
@@ -66,9 +72,8 @@
     };
     view = new keystone.View(req, res);
     t = new Trajectory.model(req.body);
-    loggingData = new Trajectory.model(req.body);
-    loggingData.readings;
     t.readings = JSON.stringify(req.body.readings);
+    t.readings = false;
     t.save(function(err) {
       if (err) {
         console.error(err);
@@ -90,6 +95,14 @@
             return;
           }
           clinician = u.name;
+          bodyCheck(t);
+        });
+        Clinic.model.findById(t.clinic).exec(function(err, u) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          clinic = u;
           bodyCheck(t);
         });
         console.log('Data Trajectory added ' + ' to the database.');

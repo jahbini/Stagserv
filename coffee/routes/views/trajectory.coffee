@@ -4,6 +4,7 @@
 keystone = require('keystone')
 Trajectory = keystone.list('Trajectory')
 User = keystone.list 'User'
+Clinic = keystone.list 'Clinic'
 
 winston = require('winston');
 require('winston-loggly');
@@ -27,11 +28,13 @@ if window? then base= window
 if module?.exports? then base = module
 
 base.exports = (req, res) ->
-  clinician = client = false
+  clinic = clinician = client = false
   bodyCheck = (body)->
     summary = {}
     return unless clinician
     return unless client
+    return unless clinic
+    summary.clinic = clinic.name
     summary.client = client.first+" "+client.last
     summary.clinician = clinician.first+" "+clinician.last
     summary.readings = "http://sensor.retrotope.com/keystone/trajectory/"+body.id
@@ -45,9 +48,8 @@ base.exports = (req, res) ->
 
   view = new (keystone.View)(req, res)
   t = new (Trajectory.model)(req.body)
-  loggingData = new (Trajectory.model)(req.body)
-  loggingData.readings
   t.readings = JSON.stringify(req.body.readings)
+  t.readings = false
   t.save (err) ->
     if err
       console.error err
@@ -66,6 +68,13 @@ base.exports = (req, res) ->
           console.error err
           return
         clinician = u.name
+        bodyCheck t
+        return      
+      Clinic.model.findById(t.clinic).exec (err,u)->
+        if err
+          console.error err
+          return
+        clinic = u
         bodyCheck t
         return      
       console.log 'Data Trajectory added ' + ' to the database.'
