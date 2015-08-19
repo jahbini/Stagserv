@@ -73,7 +73,6 @@
     view = new keystone.View(req, res);
     t = new Trajectory.model(req.body);
     t.readings = JSON.stringify(req.body.readings);
-    t.readings = false;
     t.save(function(err) {
       if (err) {
         console.error(err);
