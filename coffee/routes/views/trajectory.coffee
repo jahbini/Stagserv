@@ -6,23 +6,9 @@ Trajectory = keystone.list('Trajectory')
 User = keystone.list 'User'
 Clinic = keystone.list 'Clinic'
 
-winston = require('winston');
-require('winston-loggly');
-  
-winston.add winston.transports.Loggly, 
-    token: "823297ad-3de1-4c2c-a309-54020317f8bb"
-    subdomain: "retrotope"
-    tags: ["Winston-NodeJS"]
-    json:true
+winston = keystone.get 'winston'
 
-###
-winston.add winston.transports.Loggly, 
-    token: "9f7aaef2-588b-46e9-ab0e-7b1dabc9da01"
-    subdomain: "bamboocando"
-    tags: ["Winston-NodeJS"]
-    json:true
-###
-winston.log('info',"Retrotope Server Started");
+env =  keystone.get 'env'  
 
 if window? then base= window
 if module?.exports? then base = module
@@ -37,7 +23,10 @@ base.exports = (req, res) ->
     summary.clinic = clinic.name
     summary.client = client.first+" "+client.last
     summary.clinician = clinician.first+" "+clinician.last
-    summary.readings = "http://sensor.retrotope.com/keystone/trajectory/"+body.id
+    if env = 'production'
+      summary.readings = "http://sensor.retrotope.com/keystone/trajectory/"+body.id
+    else
+      summary.readings = "http://DEVELOPMENT.ONLY/keystone/trajectory/"+body.id
     summary.testID = body.testID
     summary.platformUUID = body.platformUUID
     summary.captureDate = body.captureDate
