@@ -10,6 +10,10 @@
     "npm":"latest"
   },
   "scripts":{
+    "build":"cake build",
+    "preversion":"Bumping version to \"$npm_package_version\" not npm test ",
+    "version":"npm run build && git add -A coffee models routes templates web.js package.json",
+    "postversion": "git push && git push --tags",
     "start":"web.js"
   },
   "dependencies": {
