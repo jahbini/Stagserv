@@ -31,16 +31,17 @@ Trajectory.add
   clinic:
     type: Types.Relationship
     ref: 'Clinic'
-  clinician: 
+  clinician:
     type: Types.Relationship
     ref: 'User'
   hostUrl: type: Types.Text
   password: type: Types.Text
-  client: 
+  client:
     type: Types.Relationship
     ref: 'User'
   testID: type: Types.Text
   platformUUID: type: Types.Text
+  applicationVersion: Types.Text
 
 Trajectory.defaultColumns = 'captureDate, clinician, testID'
 Trajectory.register()

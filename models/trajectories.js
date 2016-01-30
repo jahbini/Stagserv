@@ -62,7 +62,8 @@
     },
     platformUUID: {
       type: Types.Text
-    }
+    },
+    applicationVersion: Types.Text
   });
 
   Trajectory.defaultColumns = 'captureDate, clinician, testID';
