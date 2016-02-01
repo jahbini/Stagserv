@@ -43,5 +43,5 @@ Trajectory.add
   platformUUID: type: Types.Text
   applicationVersion: Types.Text
 
-Trajectory.defaultColumns = 'captureDate, clinician, testID'
+Trajectory.defaultColumns = 'captureDate, clinician, client, testID'
 Trajectory.register()
