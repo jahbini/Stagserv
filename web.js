@@ -7,14 +7,16 @@
   keystone = require('keystone');
 
   keystone.init({
+    'file limit': 10000000,
     'name': 'StagServExpress',
+    'port': 80,
     'favicon': 'public/favicon.ico',
     'less': 'public',
     'static': ['public'],
     'views': 'templates/views',
     'view engine': 'jade',
     'auto update': true,
-    'mongo': 'mongodb://localhost/StagServExpress',
+    'mongo': 'mongodb://10.10.10.9/StagServExpress',
     'session': true,
     'auth': true,
     'user model': 'User',
