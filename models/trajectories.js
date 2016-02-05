@@ -34,6 +34,7 @@
     captureDate: {
       type: Types.Datetime,
       "default": Date.now,
+      format: 'YYYY-MM-DD hh:mm:ss a',
       index: true
     },
     readings: {
