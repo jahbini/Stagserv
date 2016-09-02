@@ -14,7 +14,7 @@
     "preversion": "echo Bumping version to \"$npm_package_version\" not npm test ",
     "version": "npm run build && git add -A coffee models routes templates web.js package.json",
     "postversion": "git push && git push --tags",
-    "start": "web.js"
+    "start": "node ./web.js"
   },
   "dependencies": {
     "coffee-script": "latest",

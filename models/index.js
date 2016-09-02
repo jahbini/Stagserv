@@ -9,9 +9,11 @@
 
   require('./clinics.js');
 
+  require('./ten-second-snips.js');
+
   require('./trajectories.js');
 
-  require('./sensor_tags.js');
+  require('./sensor-tags.js');
 
   require('./protocols.js');
 

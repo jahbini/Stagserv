@@ -29,6 +29,10 @@ Trajectory.add
     format: 'YYYY-MM-DD hh:mm:ss a'
     index: true
   readings: type: Types.Text
+  tenSecondSnips:
+    type: Types.Relationship
+    ref: 'TenSecondSnip'
+    many: true
   clinic:
     type: Types.Relationship
     ref: 'Clinic'
