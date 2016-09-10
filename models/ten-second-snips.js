@@ -5,7 +5,7 @@
  */
 
 (function() {
-  var SensorTag, Types, keystone;
+  var Event, Types, keystone;
 
   keystone = require('keystone');
 
@@ -25,37 +25,37 @@
   Sample.register();
    */
 
-  SensorTag = new keystone.List('SensorTag', {
-    nocreate: true,
-    nodelete: true
+  Event = new keystone.List('Event', {
+    drilldown: "trajectory",
+    plural: "Events"
   });
 
-  SensorTag.add({
-    UUID: {
-      type: Types.Text,
-      required: true,
-      noedit: true,
-      index: true,
-      unique: true
-    },
-    nickname: {
-      type: Types.Text,
-      noedit: true,
+  Event.add({
+    captureDate: {
+      type: Types.Datetime,
+      format: 'YYYY-MM-DD hh:mm:ss a',
       index: true
     },
-    unit: {
+    readings: {
       type: Types.Text
     },
-    assignedName: {
+    sensorUUID: {
       type: Types.Text
     },
-    comments: {
-      type: Types.Text
+    trajectory: {
+      type: Types.Relationship,
+      ref: 'Trajectory'
     }
   });
 
-  SensorTag.defaultColumns = 'nickname, assignedName';
+  Event.relationship({
+    path: 'trajectory',
+    ref: 'Trajectory',
+    refPath: 'Events'
+  });
 
-  SensorTag.register();
+  Event.defaultColumns = 'captureDate, clinician, client, testID';
+
+  Event.register();
 
 }).call(this);

@@ -36,6 +36,7 @@ temp = (app) ->
   app.get '/protocols', routes.views.protocols
   app.get '/sensor-tag/:id', routes.views.sensorTag
   app.get '/user/:id', routes.views.user
+  app.get '/event/:id', routes.views.event
   return
 
 if window? then window.exports = temp # for the web

@@ -4,6 +4,7 @@
 
 require './users.js'
 require './clinics.js'
+require './events.js'
 require './trajectories.js'
-require './sensor_tags.js'
+require './sensor-tags.js'
 require './protocols.js'

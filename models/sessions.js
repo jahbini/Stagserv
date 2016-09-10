@@ -14,7 +14,7 @@
 
   /*
   var Sample = new keystone.List('Sample');
-  
+
   Sample.add ({
       source:{type:Types.Text},
       x:{type:Types.Number},
@@ -25,9 +25,9 @@
   Sample.register();
    */
 
-  Trajectory = new keystone.List('Trajectory', {
-    drilldown: "client clinician",
-    plural: "Trajectories"
+  Trajectory = new keystone.List('Session', {
+    drilldown: "client clinician trajectories",
+    plural: "Sessions"
   });
 
   Trajectory.add({
@@ -37,13 +37,8 @@
       format: 'YYYY-MM-DD hh:mm:ss a',
       index: true
     },
-    readings: {
+    trajectories: {
       type: Types.Text
-    },
-    events: {
-      type: Types.Relationship,
-      ref: 'Event',
-      many: true
     },
     clinic: {
       type: Types.Relationship,

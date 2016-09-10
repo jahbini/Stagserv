@@ -1,31 +1,35 @@
 {
   "name": "SensorTag-Capture",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "Data capture for clinical investigation of SensorTag data",
   "main": "server.js",
   "repository": "",
   "author": "James A. Hinds, jim@jahbini.org, jim@BambooCanDo.com",
-  "engines":{
-    "node":"latest",
-    "npm":"latest"
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
   },
-  "scripts":{
-    "start":"web.js"
+  "scripts": {
+    "build": "cake build",
+    "preversion": "echo Bumping version to \"$npm_package_version\" not npm test ",
+    "version": "npm run build && git add -A coffee models routes templates web.js package.json",
+    "postversion": "git push && git push --tags",
+    "start": "npm run build && node ./web.js"
   },
   "dependencies": {
     "coffee-script": "latest",
     "async": "~0.2.8",
     "express": "~3.2.4",
     "socket.io": "~0.9.14",
-    "underscore":"latest",
+    "underscore": "latest",
     "keystone": "latest",
-    "serve-static":"latest",
-    "winston":"latest",
-    "winston-loggly":"latest",
-    "httpinvoke":"1.4.0"
+    "serve-static": "latest",
+    "winston": "latest",
+    "winston-loggly": "latest",
+    "httpinvoke": "1.4.0"
   },
   "devDependencies": {
-    "findit2":"latest",
-    "printit":"latest"
-    }
+    "findit2": "latest",
+    "printit": "latest"
+  }
 }

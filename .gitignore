@@ -4,3 +4,4 @@ node_modules/
 public
 *.swp
 .DS_Store
+nohup.out
