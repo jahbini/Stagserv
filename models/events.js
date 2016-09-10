@@ -42,6 +42,10 @@
     sensorUUID: {
       type: Types.Text
     },
+    role: {
+      type: Types.Text,
+      "default": "Clinician"
+    },
     trajectory: {
       type: Types.Relationship,
       ref: 'Trajectory'
@@ -54,7 +58,7 @@
     refPath: 'Events'
   });
 
-  Event.defaultColumns = 'captureDate, clinician, client, testID';
+  Event.defaultColumns = 'captureDate, sensorUUID, role, readings';
 
   Event.register();
 

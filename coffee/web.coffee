@@ -4,6 +4,9 @@ winston = require('winston');
 require('winston-loggly');
 
 environment = keystone.get 'env'
+if environment != 'development'
+  console.log "Bad env!!!"
+  process.exit(1)
 if environment == 'production'
   keystone.init
     'file limit': 10000000,

@@ -18,26 +18,27 @@ Sample.add ({
 Sample.register();
 ###
 
-TenSecondSnip = new (keystone.List) 'TenSecondSnip',
+Event = new (keystone.List) 'Event',
   drilldown: "trajectory"
-  plural: "TenSecondSnips"
+  plural: "Events"
 
-TenSecondSnip.add
+Event.add
   captureDate:
     type: Types.Datetime
     format: 'YYYY-MM-DD hh:mm:ss a'
     index: true
   readings: type: Types.Text
   sensorUUID: type: Types.Text
+  role: type: Types.Text, default: "Clinician"
   trajectory:
     type: Types.Relationship
     ref: 'Trajectory'
 
-TenSecondSnip.relationship({
+Event.relationship({
   path: 'trajectory',
   ref: 'Trajectory',
-  refPath: 'TenSecondSnips'
+  refPath: 'Events'
 });
 
-TenSecondSnip.defaultColumns = 'captureDate, clinician, client, testID'
-TenSecondSnip.register()
+Event.defaultColumns = 'captureDate, sensorUUID, role, readings'
+Event.register()

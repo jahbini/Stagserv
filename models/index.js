@@ -9,7 +9,7 @@
 
   require('./clinics.js');
 
-  require('./ten-second-snips.js');
+  require('./events.js');
 
   require('./trajectories.js');
 

@@ -40,9 +40,9 @@
     readings: {
       type: Types.Text
     },
-    tenSecondSnips: {
+    events: {
       type: Types.Relationship,
-      ref: 'TenSecondSnip',
+      ref: 'Event',
       many: true
     },
     clinic: {

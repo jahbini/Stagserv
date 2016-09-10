@@ -28,7 +28,7 @@
   }
 
   base.exports = function(req, res) {
-    var bodyCheck, client, clinic, clinician, t, view;
+    var bodyCheck, client, clinic, clinician, ref, view, whichId;
     clinic = clinician = client = false;
     bodyCheck = function(body) {
       var summary;
@@ -45,7 +45,7 @@
       summary.clinic = clinic.name;
       summary.client = client.first + " " + client.last;
       summary.clinician = clinician.first + " " + clinician.last;
-      if (env = 'production') {
+      if (env === 'production') {
         summary.readings = "http://sensor.retrotope.com/keystone/trajectory/" + body.id;
       } else {
         summary.readings = "http://DEVELOPMENT.ONLY/keystone/trajectory/" + body.id;
@@ -57,9 +57,22 @@
       winston.log('info', summary, "Trajectory upload");
     };
     view = new keystone.View(req, res);
-    t = new Trajectory.model(req.body);
-    t.readings = JSON.stringify(req.body.readings);
-    t.save(function(err) {
+    if ((ref = req.body.clinic) != null ? ref._id : void 0) {
+      req.body.clinic = req.body.clinic._id;
+    }
+    req.body.readings = JSON.stringify(req.body.readings);
+    whichId = req.body._id || new Trajectory.model()._id.toString();
+    delete req.body._id;
+    console.log("Which id= ", whichId);
+    console.log(req.body);
+    debugger;
+    Trajectory.model.findByIdAndUpdate(whichId, {
+      $set: req.body
+    }, {
+      "new": true,
+      upsert: true,
+      setDefaultsOnInsert: true
+    }, function(err, t) {
       if (err) {
         console.error(err);
         res.status(500).send({
@@ -90,9 +103,10 @@
           clinic = u;
           bodyCheck(t);
         });
-        console.log('Data Trajectory added ' + ' to the database.');
+        console.log('Data Trajectory updated ' + t._id + ' to the database.');
         res.status(200).send({
-          message: "OK"
+          message: "OK",
+          _id: t._id
         });
       }
     });
