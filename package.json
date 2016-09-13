@@ -17,16 +17,16 @@
     "start": "npm run build && node ./web.js"
   },
   "dependencies": {
-    "coffee-script": "latest",
     "async": "~0.2.8",
+    "coffee-script": "latest",
     "express": "~3.2.4",
-    "socket.io": "~0.9.14",
-    "underscore": "latest",
+    "httpinvoke": "1.4.0",
     "keystone": "latest",
     "serve-static": "latest",
+    "socket.io": "~0.9.14",
+    "underscore": "^1.8.3",
     "winston": "latest",
-    "winston-loggly": "latest",
-    "httpinvoke": "1.4.0"
+    "winston-loggly": "latest"
   },
   "devDependencies": {
     "findit2": "latest",
