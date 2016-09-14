@@ -56,9 +56,6 @@
     hostUrl: {
       type: Types.Text
     },
-    password: {
-      type: Types.Text
-    },
     client: {
       type: Types.Relationship,
       ref: 'User'
