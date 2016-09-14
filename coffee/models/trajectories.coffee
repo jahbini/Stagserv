@@ -19,7 +19,7 @@ Sample.register();
 ###
 
 Trajectory = new (keystone.List) 'Trajectory',
-  drilldown: "client clinician"
+  drilldown: "client clinician events"
   plural: "Trajectories"
 
 Trajectory.add

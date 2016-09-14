@@ -25,15 +25,17 @@
     var view, whichId;
     view = new keystone.View(req, res);
     console.log(req.body);
-    whichId = req.body._id || new Event()._id;
-    unset(req.body._id);
+    whichId = req.body._id || new Event.model()._id.toString();
+    delete req.body._id;
     console.log("Which id= ", whichId);
     console.log("NEW EVENT ", req.params);
     Event.model.findByIdAndUpdate(whichId, {
       $set: req.body
     }, {
-      "new": true
-    }, function(err, user) {
+      "new": true,
+      upsert: true,
+      setDefaultsOnInsert: true
+    }, function(err, t) {
       if (err) {
         console.log(err);
       } else {
@@ -43,7 +45,7 @@
           _id: t._id
         });
       }
-    });
+    }).populate('trajectory').exec();
   };
 
 }).call(this);

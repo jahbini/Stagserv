@@ -16,7 +16,7 @@ if environment == 'production'
     'less': 'public'
     'static': [ 'public' ]
     'views': 'templates/views'
-    'view engine': 'jade'
+    'view engine': 'pug'
     'auto update': true
     'mongo': 'mongodb://10.10.10.9/StagServExpress'
     'session': true
@@ -39,7 +39,7 @@ else if environment == 'testing'
     'less': 'public'
     'static': [ 'public' ]
     'views': 'templates/views'
-    'view engine': 'jade'
+    'view engine': 'pug'
     'auto update': true
     'mongo': 'mongodb://localhost/StagServExpress'
     'session': true
@@ -63,7 +63,7 @@ else
     'less': 'public'
     'static': [ 'public' ]
     'views': 'templates/views'
-    'view engine': 'jade'
+    'view engine': 'pug'
     'auto update': true
     'mongo': 'mongodb://localhost/StagServExpress'
     'session': true
