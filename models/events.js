@@ -36,15 +36,12 @@
       format: 'YYYY-MM-DD hh:mm:ss a',
       index: true
     },
-    readings: {
-      type: Types.Text
-    },
-    sensorUUID: {
-      type: Types.Text
-    },
     role: {
       type: Types.Text,
       "default": "Clinician"
+    },
+    readings: {
+      type: Types.Text
     },
     trajectory: {
       type: Types.Relationship,
