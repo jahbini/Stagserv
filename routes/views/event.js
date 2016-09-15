@@ -5,11 +5,13 @@
  */
 
 (function() {
-  var Event, base, env, keystone;
+  var Event, Trajectory, base, env, keystone;
 
   keystone = require('keystone');
 
   Event = keystone.list('Event');
+
+  Trajectory = keystone.list('Trajectory');
 
   env = keystone.get('env');
 
@@ -36,16 +38,24 @@
       upsert: true,
       setDefaultsOnInsert: true
     }, function(err, t) {
+      var trajectory;
       if (err) {
         console.log(err);
       } else {
+        trajectory = Trajectory.model.findByIdAndUpdate(t.trajectory, {
+          $push: {
+            events: t._id
+          }
+        }, function(err, trajectory) {
+          return console.log("Trajectory update (" + err + ") -");
+        });
         console.log('Event added ' + t._id + ' to the database.');
         res.status(200).send({
           message: "OK",
           _id: t._id
         });
       }
-    }).populate('trajectory').exec();
+    });
   };
 
 }).call(this);

@@ -3,6 +3,7 @@
 ###
 keystone = require('keystone')
 Event = keystone.list('Event')
+Trajectory = keystone.list 'Trajectory'
 env =  keystone.get 'env'
 
 if window? then base= window
@@ -25,9 +26,16 @@ base.exports = (req, res) ->
         console.log err
         return
       else
+        trajectory = Trajectory.model.findByIdAndUpdate(
+          t.trajectory,
+          {$push: {events:t._id}},
+          (err,trajectory)->
+            console.log "Trajectory update (#{err}) -"
+          )
+
         console.log 'Event added ' + t._id + ' to the database.'
         res.status 200
           .send message: "OK", _id:t._id
         return
-    ).populate('trajectory').exec()
+    )
   return
