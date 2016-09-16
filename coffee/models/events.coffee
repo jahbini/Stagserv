@@ -36,7 +36,7 @@ Event.add
 Event.relationship({
   path: 'trajectory',
   ref: 'Trajectory',
-  refPath: 'Events'
+  refPath: 'events'
 });
 
 Event.defaultColumns = 'captureDate, sensorUUID, role, readings'
