@@ -32,6 +32,7 @@ base.exports = (req, res) ->
       summary.readings = "http://DEVELOPMENT.ONLY/keystone/trajectory/"+body.id
     summary.testID = body.testID
     summary.platformUUID = body.platformUUID
+    summary.platformIosVersion = body.platformIosVersion
     summary.captureDate = body.captureDate
 
     console.log summary

@@ -44,6 +44,7 @@ Trajectory.add
     ref: 'User'
   testID: type: Types.Text
   platformUUID: type: Types.Text
+  platformIosVersion: Types.Text
   applicationVersion: Types.Text
 
 Trajectory.defaultColumns = 'captureDate, clinician, client, testID'
