@@ -31,6 +31,8 @@
   },
   "devDependencies": {
     "findit2": "latest",
-    "printit": "latest"
+    "printit": "latest",
+    "should": "~11.1.0",
+    "supertest": "~2.0.0"
   }
 }
