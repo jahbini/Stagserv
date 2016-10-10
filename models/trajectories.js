@@ -63,6 +63,7 @@
     platformUUID: {
       type: Types.Text
     },
+    platformIosVersion: Types.Text,
     applicationVersion: Types.Text
   });
 

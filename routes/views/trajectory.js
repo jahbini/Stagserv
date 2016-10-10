@@ -52,6 +52,7 @@
       }
       summary.testID = body.testID;
       summary.platformUUID = body.platformUUID;
+      summary.platformIosVersion = body.platformIosVersion;
       summary.captureDate = body.captureDate;
       console.log(summary);
       winston.log('info', summary, "Trajectory upload");
