@@ -29,7 +29,7 @@ routes = views: importRoutes('./views')
 temp = (app) ->
 # Bind Routes
   statics = require('serve-static')
-  app.all '/api/*', keystone.middleware.cors
+  app.all '/', keystone.middleware.cors
   app.get '/sample', routes.views.index
   app.get '/', statics('./public', 'index': 'stagapp.html')
   app.get '/clinics', routes.views.clinics

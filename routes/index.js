@@ -31,6 +31,7 @@
   temp = function(app) {
     var statics;
     statics = require('serve-static');
+    app.all('/', keystone.middleware.cors);
     app.get('/sample', routes.views.index);
     app.get('/', statics('./public', {
       'index': 'stagapp.html'
@@ -38,6 +39,7 @@
     app.get('/clinics', routes.views.clinics);
     app.get('/protocols', routes.views.protocols);
     app.get('/sensor-tag/:id', routes.views.sensorTag);
+    app.get('/sensor-tag/:id/:version', routes.views.sensorTag);
     app.get('/user/:id', routes.views.user);
     app.post('/event', routes.views.event);
     app.post('/trajectory', routes.views.trajectory);

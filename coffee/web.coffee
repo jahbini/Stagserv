@@ -3,6 +3,9 @@ keystone = require('keystone')
 winston = require('winston');
 require('winston-loggly');
 
+setCorsHeaders = (res,path)->
+  res.setHeader "Access-Control-Allow-Origin", "*"
+
 environment = keystone.get 'env'
 if environment != 'development'
   console.log "Bad env -- must be development only!!!"
@@ -15,6 +18,8 @@ if environment == 'production'
     'favicon': 'public/favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
+    'static options':
+      setHeaders: setCorsHeaders
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
@@ -38,6 +43,8 @@ else if environment == 'testing'
     'favicon': 'public/favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
+    'static options':
+      setHeaders: setCorsHeaders
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
@@ -62,6 +69,8 @@ else
     'favicon': 'public/favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
+    'static options':
+      setHeaders: setCorsHeaders
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
@@ -79,7 +88,6 @@ else
 
 keystone.set 'winston', winston
 keystone.set 'cors allow origin', true
-
 require './models'
 keystone.set 'routes', require('./routes')
 keystone.start()
