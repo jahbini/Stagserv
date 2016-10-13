@@ -5,7 +5,7 @@ require('winston-loggly');
 
 environment = keystone.get 'env'
 if environment != 'development'
-  console.log "Bad env!!!"
+  console.log "Bad env -- must be development only!!!"
   process.exit(1)
 if environment == 'production'
   keystone.init
@@ -78,6 +78,7 @@ else
     json:true
 
 keystone.set 'winston', winston
+keystone.set 'cors allow origin' true
 
 require './models'
 keystone.set 'routes', require('./routes')
