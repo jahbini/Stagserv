@@ -78,7 +78,7 @@ else
     json:true
 
 keystone.set 'winston', winston
-keystone.set 'cors allow origin' true
+keystone.set 'cors allow origin', true
 
 require './models'
 keystone.set 'routes', require('./routes')
