@@ -1,0 +1,42 @@
+version: '2'
+services:
+  nginx:
+    image: ej52/alpine-nginx-proxy
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  web:
+    image: bamboojim/stagserv:v5
+    volumes_from: 
+     - app
+     - nginx
+    links:
+      - db
+    depends_on:
+      - db
+      - app
+    environment:
+      - NODE_ENV=development
+#      - VIRTUAL_HOST=138.68.45.111
+      - VIRTUAL_HOST=sensor-test.tell140.com
+      - VIRTUAL_PORT=3030
+    expose:
+      - 3030
+  app:
+    image: bamboojim/stagapp:v3
+    volumes: 
+      - /Stagapp-master/public
+  swagger:
+    image: schickling/swagger-ui:latest
+    expose:
+      -  80
+    environment:
+      - VIRTUAL_HOST=sensor-api.tell140.com
+      - VIRTUAL_PORT=80
+      - API_URL=http://sensor-test.tell140.com/api/swagger/retrotope.yaml
+  db:
+    image: mvertes/alpine-mongo:3.2.4-1
+    expose:
+      -  27017
