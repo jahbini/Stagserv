@@ -88,6 +88,8 @@ else
 
 keystone.set 'winston', winston
 keystone.set 'cors allow origin', true
+keystone.set 'cors allow headers', false
+keystone.set 'cors allow methods', false
 require './models'
 keystone.set 'routes', require('./routes')
 keystone.start()
