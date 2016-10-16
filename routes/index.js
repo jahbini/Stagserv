@@ -31,7 +31,7 @@
   temp = function(app) {
     var statics;
     statics = require('serve-static');
-    app.all('/', keystone.middleware.cors);
+    app.all('/*', keystone.middleware.cors);
     app.get('/sample', routes.views.index);
     app.get('/', statics('./public', {
       'index': 'stagapp.html'

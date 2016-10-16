@@ -29,6 +29,9 @@
       'favicon': 'public/favicon.ico',
       'less': 'public',
       'static': ['public'],
+      'static options': {
+        setHeaders: setCorsHeaders
+      },
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
@@ -52,6 +55,9 @@
       'favicon': 'public/favicon.ico',
       'less': 'public',
       'static': ['public'],
+      'static options': {
+        setHeaders: setCorsHeaders
+      },
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
@@ -72,7 +78,7 @@
     keystone.init({
       'file limit': 10000000,
       'name': 'StagServExpress',
-      'port': 3030,
+      'port': 9000,
       'favicon': 'public/favicon.ico',
       'less': 'public',
       'static': ['public'],
@@ -99,6 +105,10 @@
   keystone.set('winston', winston);
 
   keystone.set('cors allow origin', true);
+
+  keystone.set('cors allow headers', false);
+
+  keystone.set('cors allow methods', false);
 
   require('./models');
 
