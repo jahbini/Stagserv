@@ -18,7 +18,6 @@
 
   base.exports = function(req, res) {
     var view;
-    console.log('Protocol model queried');
     view = new keystone.View(req, res);
     Protocol.model.find().exec(function(err, protocols) {
       if (err) {
@@ -27,7 +26,6 @@
         res.send(protocols);
       }
     });
-    console.log('Protocol model queried');
   };
 
 }).call(this);

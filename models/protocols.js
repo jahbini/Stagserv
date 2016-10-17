@@ -40,6 +40,10 @@
     },
     comments: {
       type: Types.Text
+    },
+    mileStones: {
+      type: Types.Text,
+      "default": "action,complete"
     }
   });
 

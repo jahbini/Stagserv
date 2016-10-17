@@ -20,7 +20,7 @@ Sample.register();
 
 Protocol = new keystone.List 'Protocol',
   nocreate: false
-  nodelete: false 
+  nodelete: false
 
 Protocol.add
   name:
@@ -30,6 +30,9 @@ Protocol.add
     unique: true
     default: "Other"
   comments: type: Types.Text
+  mileStones:
+    type: Types.Text
+    default: "action,complete"
 
 Protocol.defaultColumns = 'name, comments'
 Protocol.register()
