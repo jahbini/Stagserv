@@ -39,6 +39,7 @@ temp = (app) ->
   app.get '/user/:id', routes.views.user
   app.post '/event', routes.views.event
   app.post '/trajectory', routes.views.trajectory
+  app.put '/trajectory', routes.views.trajectory
   return
 
 if window? then window.exports = temp # for the web

@@ -43,6 +43,7 @@
     app.get('/user/:id', routes.views.user);
     app.post('/event', routes.views.event);
     app.post('/trajectory', routes.views.trajectory);
+    app.put('/trajectory', routes.views.trajectory);
   };
 
   if (typeof window !== "undefined" && window !== null) {
