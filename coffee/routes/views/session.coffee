@@ -16,7 +16,7 @@ if module?.exports? then base = module
 base.exports = (req, res) ->
   clinic = clinician = client = false
   # bodyCheck is invoked async fashion as the clinics, clinicians, and clients
-  # are found and bound to the saved session
+  # are found and bound to the saved Session
   # when all three are found, the trajecotyr summary is sent off to Loggly via winston
   bodyCheck = (body)->
     summary = {}
@@ -27,9 +27,9 @@ base.exports = (req, res) ->
     summary.client = client.first+" "+client.last
     summary.clinician = clinician.first+" "+clinician.last
     if env == 'production'
-      summary.readings = "http://sensor.retrotope.com/keystone/session/"+body.id
+      summary.readings = "http://sensor.retrotope.com/keystone/Session/"+body.id
     else
-      summary.readings = "http://DEVELOPMENT.ONLY/keystone/session/"+body.id
+      summary.readings = "http://DEVELOPMENT.ONLY/keystone/Session/"+body.id
     summary.testID = body.testID
     summary.platformUUID = body.platformUUID
     summary.platformIosVersion = body.platformIosVersion

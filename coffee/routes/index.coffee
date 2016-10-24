@@ -38,8 +38,8 @@ temp = (app) ->
   app.get '/sensor-tag/:id/:version', routes.views.sensorTag
   app.get '/user/:id', routes.views.user
   app.post '/event', routes.views.event
-  app.post '/trajectory', routes.views.trajectory
-  app.put '/trajectory', routes.views.trajectory
+  app.post '/session', routes.views.session
+  app.put '/session', routes.views.session
   return
 
 if window? then window.exports = temp # for the web

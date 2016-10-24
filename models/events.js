@@ -26,7 +26,7 @@
    */
 
   Event = new keystone.List('Event', {
-    drilldown: "trajectory",
+    drilldown: "session",
     plural: "Events"
   });
 
@@ -43,15 +43,15 @@
     readings: {
       type: Types.Text
     },
-    trajectory: {
+    session: {
       type: Types.Relationship,
-      ref: 'Trajectory'
+      ref: 'Session'
     }
   });
 
   Event.relationship({
-    path: 'trajectory',
-    ref: 'Trajectory',
+    path: 'session',
+    ref: 'Session',
     refPath: 'events'
   });
 

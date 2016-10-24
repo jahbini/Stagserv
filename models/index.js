@@ -11,7 +11,7 @@
 
   require('./events.js');
 
-  require('./trajectories.js');
+  require('./sessions.js');
 
   require('./sensor-tags.js');
 
