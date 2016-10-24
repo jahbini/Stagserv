@@ -19,7 +19,7 @@ Sample.register();
 ###
 
 Event = new (keystone.List) 'Event',
-  drilldown: "trajectory"
+  drilldown: "session"
   plural: "Events"
 
 Event.add
@@ -29,13 +29,13 @@ Event.add
     index: true
   role: type: Types.Text, default: "Clinician"
   readings: type: Types.Text
-  trajectory:
+  session:
     type: Types.Relationship
-    ref: 'Trajectory'
+    ref: 'Session'
 
 Event.relationship({
-  path: 'trajectory',
-  ref: 'Trajectory',
+  path: 'session',
+  ref: 'Session',
   refPath: 'events'
 });
 

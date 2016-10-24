@@ -46,9 +46,9 @@
       summary.client = client.first + " " + client.last;
       summary.clinician = clinician.first + " " + clinician.last;
       if (env === 'production') {
-        summary.readings = "http://sensor.retrotope.com/keystone/session/" + body.id;
+        summary.readings = "http://sensor.retrotope.com/keystone/Session/" + body.id;
       } else {
-        summary.readings = "http://DEVELOPMENT.ONLY/keystone/session/" + body.id;
+        summary.readings = "http://DEVELOPMENT.ONLY/keystone/Session/" + body.id;
       }
       summary.testID = body.testID;
       summary.platformUUID = body.platformUUID;

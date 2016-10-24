@@ -5,7 +5,7 @@
  */
 
 (function() {
-  var Trajectory, Types, keystone;
+  var Session, Types, keystone;
 
   keystone = require('keystone');
 
@@ -25,12 +25,12 @@
   Sample.register();
    */
 
-  Trajectory = new keystone.List('Trajectory', {
+  Session = new keystone.List('Session', {
     drilldown: "client clinician events",
-    plural: "Trajectories"
+    plural: "Sessions"
   });
 
-  Trajectory.add({
+  Session.add({
     captureDate: {
       type: Types.Datetime,
       "default": Date.now,
@@ -67,8 +67,8 @@
     applicationVersion: Types.Text
   });
 
-  Trajectory.defaultColumns = 'captureDate, clinician, client, testID';
+  Session.defaultColumns = 'captureDate, clinician, client, testID';
 
-  Trajectory.register();
+  Session.register();
 
 }).call(this);

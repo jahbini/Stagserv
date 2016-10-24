@@ -5,7 +5,7 @@
  */
 
 (function() {
-  var Trajectory, Types, keystone;
+  var Session, Types, keystone;
 
   keystone = require('keystone');
 
@@ -14,7 +14,7 @@
 
   /*
   var Sample = new keystone.List('Sample');
-
+  
   Sample.add ({
       source:{type:Types.Text},
       x:{type:Types.Number},
@@ -25,20 +25,25 @@
   Sample.register();
    */
 
-  Trajectory = new keystone.List('Session', {
-    drilldown: "client clinician trajectories",
+  Session = new keystone.List('Session', {
+    drilldown: "client clinician events",
     plural: "Sessions"
   });
 
-  Trajectory.add({
+  Session.add({
     captureDate: {
       type: Types.Datetime,
       "default": Date.now,
       format: 'YYYY-MM-DD hh:mm:ss a',
       index: true
     },
-    trajectories: {
+    readings: {
       type: Types.Text
+    },
+    events: {
+      type: Types.Relationship,
+      ref: 'Event',
+      many: true
     },
     clinic: {
       type: Types.Relationship,
@@ -47,12 +52,6 @@
     clinician: {
       type: Types.Relationship,
       ref: 'User'
-    },
-    hostUrl: {
-      type: Types.Text
-    },
-    password: {
-      type: Types.Text
     },
     client: {
       type: Types.Relationship,
@@ -64,11 +63,12 @@
     platformUUID: {
       type: Types.Text
     },
+    platformIosVersion: Types.Text,
     applicationVersion: Types.Text
   });
 
-  Trajectory.defaultColumns = 'captureDate, clinician, client, testID';
+  Session.defaultColumns = 'captureDate, clinician, client, testID';
 
-  Trajectory.register();
+  Session.register();
 
 }).call(this);

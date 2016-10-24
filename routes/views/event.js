@@ -5,13 +5,13 @@
  */
 
 (function() {
-  var Event, Trajectory, base, env, keystone;
+  var Event, Session, base, env, keystone;
 
   keystone = require('keystone');
 
   Event = keystone.list('Event');
 
-  Trajectory = keystone.list('Trajectory');
+  Session = keystone.list('Session');
 
   env = keystone.get('env');
 
@@ -38,16 +38,16 @@
       upsert: true,
       setDefaultsOnInsert: true
     }, function(err, t) {
-      var trajectory;
+      var session;
       if (err) {
         console.log(err);
       } else {
-        trajectory = Trajectory.model.findByIdAndUpdate(t.trajectory, {
+        session = Session.model.findByIdAndUpdate(t.session, {
           $push: {
             events: t._id
           }
-        }, function(err, trajectory) {
-          return console.log("Trajectory update (" + err + ") -");
+        }, function(err, session) {
+          return console.log("Session update (" + err + ") -");
         });
         console.log('Event added ' + t._id + ' to the database.');
         res.status(200).send({
