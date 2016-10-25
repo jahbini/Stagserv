@@ -78,7 +78,7 @@
     keystone.init({
       'file limit': 10000000,
       'name': 'StagServExpress',
-      'port': 9000,
+      'port': 80,
       'favicon': 'public/favicon.ico',
       'less': 'public',
       'static': ['public'],

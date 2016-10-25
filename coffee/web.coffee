@@ -48,7 +48,7 @@ else if environment == 'testing'
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost/StagServExpress'
+    'mongo': 'mongodb://db/StagServExpress'
     'session': true
     'auth': true
     'user model': 'User'
@@ -65,7 +65,7 @@ else
   keystone.init
     'file limit': 10000000,
     'name': 'StagServExpress'
-    'port':9000,
+    'port':80,
     'favicon': 'public/favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
