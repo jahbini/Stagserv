@@ -7,8 +7,8 @@ setCorsHeaders = (res,path)->
   res.setHeader "Access-Control-Allow-Origin", "*"
 
 environment = keystone.get 'env'
-if environment != 'development'
-  console.log "Bad env -- must be development only!!!"
+if environment == 'production'
+  console.log "Bad env -- must be development or testing only!!!"
   process.exit(1)
 if environment == 'production'
   keystone.init
@@ -39,7 +39,7 @@ else if environment == 'testing'
   keystone.init
     'file limit': 10000000,
     'name': 'StagServExpress'
-    'port':80,
+    'port':3030,
     'favicon': 'public/favicon.ico'
     'less': 'public'
     'static': [ 'public' ]

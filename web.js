@@ -16,8 +16,8 @@
 
   environment = keystone.get('env');
 
-  if (environment !== 'development') {
-    console.log("Bad env -- must be development only!!!");
+  if (environment === 'production') {
+    console.log("Bad env -- must be development or testing only!!!");
     process.exit(1);
   }
 
@@ -51,7 +51,7 @@
     keystone.init({
       'file limit': 10000000,
       'name': 'StagServExpress',
-      'port': 80,
+      'port': 3030,
       'favicon': 'public/favicon.ico',
       'less': 'public',
       'static': ['public'],
@@ -61,7 +61,7 @@
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
-      'mongo': 'mongodb://localhost/StagServExpress',
+      'mongo': 'mongodb://db/StagServExpress',
       'session': true,
       'auth': true,
       'user model': 'User',
