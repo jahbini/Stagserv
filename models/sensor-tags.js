@@ -54,7 +54,7 @@
     }
   });
 
-  SensorTag.defaultColumns = 'nickname, assignedName';
+  SensorTag.defaultColumns = 'UUID, assignedName';
 
   SensorTag.register();
 

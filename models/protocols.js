@@ -47,7 +47,7 @@
     }
   });
 
-  Protocol.defaultColumns = 'name, comments';
+  Protocol.defaultColumns = 'name, mileStones, comments';
 
   Protocol.register();
 

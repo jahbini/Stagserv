@@ -46,6 +46,9 @@
     session: {
       type: Types.Relationship,
       ref: 'Session'
+    },
+    UUID: {
+      type: Types.Text
     }
   });
 
@@ -55,7 +58,7 @@
     refPath: 'events'
   });
 
-  Event.defaultColumns = 'captureDate, sensorUUID, role, readings';
+  Event.defaultColumns = 'captureDate,  role, readings';
 
   Event.register();
 

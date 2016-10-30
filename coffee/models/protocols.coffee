@@ -34,5 +34,5 @@ Protocol.add
     type: Types.Text
     default: "action,complete"
 
-Protocol.defaultColumns = 'name, comments'
+Protocol.defaultColumns = 'name, mileStones, comments'
 Protocol.register()

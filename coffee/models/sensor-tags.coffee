@@ -20,7 +20,7 @@ Sample.register();
 
 SensorTag = new keystone.List 'SensorTag',
   nocreate: true
-  nodelete: true 
+  nodelete: true
 
 SensorTag.add
   UUID:
@@ -37,5 +37,5 @@ SensorTag.add
   assignedName: type: Types.Text
   comments: type: Types.Text
 
-SensorTag.defaultColumns = 'nickname, assignedName'
+SensorTag.defaultColumns = 'UUID, assignedName'
 SensorTag.register()

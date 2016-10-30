@@ -32,6 +32,8 @@ Event.add
   session:
     type: Types.Relationship
     ref: 'Session'
+  UUID:
+    type: Types.Text
 
 Event.relationship({
   path: 'session',
@@ -39,5 +41,5 @@ Event.relationship({
   refPath: 'events'
 });
 
-Event.defaultColumns = 'captureDate, sensorUUID, role, readings'
+Event.defaultColumns = 'captureDate,  role, readings'
 Event.register()
