@@ -28,6 +28,14 @@ Session.add
     default: Date.now
     format: 'YYYY-MM-DD hh:mm:ss a'
     index: true
+  TimeStamp:
+    virtual: true
+    type: Types.Number
+    get: ->
+      x = new Date
+      x.setTime this.captureDate
+      x.getTime()
+
   readings: type: Types.Text
   events:
     type: Types.Relationship
@@ -43,9 +51,20 @@ Session.add
     type: Types.Relationship
     ref: 'User'
   testID: type: Types.Text
+  accepted:
+    type: Types.Boolean
+    default: true
+    
   platformUUID: type: Types.Text
   platformIosVersion: Types.Text
   applicationVersion: Types.Text
+  # types desired from github issue stagapp:93
+  SerialNoL: Types.Text
+  SerialNoR: Types.Text
+  FWLevelL: Types.Text
+  FWLevelR: Types.Text
+  password: Types.Text
+  
 
-Session.defaultColumns = 'captureDate, clinician, client, testID'
+Session.defaultColumns = 'captureDate, accepted, clinician, client, testID'
 Session.register()

@@ -27,6 +27,15 @@ Event.add
     type: Types.Datetime
     format: 'YYYY-MM-DD hh:mm:ss a'
     index: true
+  TimeStamp:
+    virtual: true
+    type: Types.Number
+    get: ->
+      x = new Date
+      x.setTime this.captureDate
+      x.getTime()
+
+
   role: type: Types.Text, default: "Clinician"
   readings: type: Types.Text
   session:

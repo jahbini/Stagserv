@@ -33,7 +33,7 @@ hasher= (s) ->
       (a,b)->
         a=((a<<5)-a)+b.charCodeAt(0)
         return a&255
-      ,0)              
+      ,0)
 
 namer= (hash) ->
     a=hash>>4&0xf
@@ -61,7 +61,7 @@ base.exports = (req, res) ->
     console.log err
     console.log tagInfo
     console.log "--------------"
-    if err 
+    if err
       console.log "no old, inserting " + uuid
       console.log err
       t.save (error)->
@@ -73,7 +73,7 @@ base.exports = (req, res) ->
           .send error: error
         else
           console.log 'sensorTag added ' + ' to the database.'
-          t._id = t.UUID 
+          t._id = t.UUID
           console.log t
           res.status 200
           .send t
@@ -81,7 +81,10 @@ base.exports = (req, res) ->
         return
     else
       console.log 'SensorTag reply'
-      tagInfo._id = tagInfo.UUID 
+      try
+        tagInfo._id = tagInfo.UUID
+      catch huh
+        console.log "Bad UUID??"
       console.log tagInfo
       console.log 'SensorTag info'
       res.status 200
