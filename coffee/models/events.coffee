@@ -29,12 +29,11 @@ Event.add
     index: true
   TimeStamp:
     virtual: true
-    type: Types.Number
+    type: Types.Text
     get: ->
       x = new Date
       x.setTime this.captureDate
-      x.getTime()
-
+      x.getTime().toString()
 
   role: type: Types.Text, default: "Clinician"
   readings: type: Types.Text

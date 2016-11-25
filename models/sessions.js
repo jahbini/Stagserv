@@ -39,12 +39,12 @@
     },
     TimeStamp: {
       virtual: true,
-      type: Types.Number,
+      type: Types.Text,
       get: function() {
         var x;
         x = new Date;
         x.setTime(this.captureDate);
-        return x.getTime();
+        return x.getTime().toString();
       }
     },
     readings: {

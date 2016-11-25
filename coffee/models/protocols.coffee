@@ -30,9 +30,12 @@ Protocol.add
     unique: true
     default: "Other"
   comments: type: Types.Text
+  leftSensor: type: Types.Boolean
+  rightSensor: type: Types.Boolean
+  walkSensor: type: Types.Boolean
   mileStones:
     type: Types.Text
     default: "action,complete"
 
-Protocol.defaultColumns = 'name, mileStones, comments'
+Protocol.defaultColumns = 'name, mileStones, comments, leftSensor, rightSensor, walkSensor'
 Protocol.register()

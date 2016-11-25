@@ -20,7 +20,7 @@ Sample.register();
 
 SensorTag = new keystone.List 'SensorTag',
   nocreate: true
-  nodelete: true
+  nodelete: false
 
 SensorTag.add
   UUID:
