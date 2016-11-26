@@ -14,8 +14,8 @@ if environment == 'production'
   keystone.init
     'file limit': 10000000,
     'name': 'StagServExpress'
-    'port':80,
-    'favicon': 'public/favicon.ico'
+    'port':3030,
+    'favicon': './favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
     'static options':
@@ -40,7 +40,7 @@ else if environment == 'testing'
     'file limit': 10000000,
     'name': 'StagServExpress'
     'port':3030,
-    'favicon': 'public/favicon.ico'
+    'favicon': './favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
     'static options':
@@ -65,8 +65,8 @@ else
   keystone.init
     'file limit': 10000000,
     'name': 'StagServExpress'
-    'port':80,
-    'favicon': 'public/favicon.ico'
+    'port':3030,
+    'favicon': './favicon.ico'
     'less': 'public'
     'static': [ 'public' ]
     'static options':
