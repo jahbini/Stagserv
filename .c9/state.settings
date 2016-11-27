@@ -99,15 +99,15 @@
             "@acestatus": 2,
             "@datagrid": 1,
             "@divider": 5,
-            "@document": 19,
+            "@document": 26,
             "@form": 5,
             "@menu": 5,
             "@menuitem": 13,
             "@pane": 2,
             "@preferences": 1,
-            "@session": 18,
-            "@tab": 18,
-            "@undoManager": 19
+            "@session": 25,
+            "@tab": 25,
+            "@undoManager": 26
         }
     },
     "findinfiles": {
@@ -125,7 +125,7 @@
     },
     "panecycle": {
         "json()": [
-            "tab17",
+            "tab24",
             "searchResults"
         ]
     },
@@ -162,12 +162,9 @@
         "expanded": {
             "json()": [
                 "/",
-                "/coffee/models",
                 "/client",
                 "/public",
-                "/templates",
                 "/templates/views",
-                "/coffee",
                 "/coffee/templates",
                 "/coffee/templates/views",
                 "/templates/views/New Folder",
@@ -175,7 +172,9 @@
                 "/coffee/templates/views/New Folder",
                 "/coffee/templates/views/errors",
                 "/templates/layouts",
-                "/templates/mixins"
+                "/templates/mixins",
+                "/coffee/routes",
+                "/coffee/routes/views"
             ]
         }
     },
@@ -191,92 +190,30 @@
     },
     "tabs": {
         "json()": {
-            "focus": "/.c9/searchresults",
+            "focus": "/package.json",
             "meta": {
                 "accessList": [
-                    "tab17",
-                    "tab16",
-                    "tab13",
-                    "tab7"
+                    "tab24"
                 ]
             },
             "name": "pane0",
             "nodes": [
                 {
                     "type": "tab",
-                    "name": "tab7",
-                    "path": "/Dockerfile",
+                    "name": "tab24",
+                    "path": "/package.json",
                     "className": [
-                        "tab7"
+                        "tab24",
+                        "focus"
                     ],
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1480208587084
+                            "timestamp": 1479617643000
                         },
                         "filter": true,
-                        "title": "Dockerfile",
-                        "tooltip": "/Dockerfile",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab13",
-                    "path": "/docker-compose.yml",
-                    "className": [
-                        "tab13"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1476581216000
-                        },
-                        "filter": true,
-                        "title": "docker-compose.yml",
-                        "tooltip": "/docker-compose.yml",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab16",
-                    "path": "/templates/layouts/base.pug",
-                    "className": [
-                        "tab16"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1480276676941
-                        },
-                        "filter": true,
-                        "title": "base.pug",
-                        "tooltip": "/templates/layouts/base.pug",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab17",
-                    "path": "/coffee/models/sessions.coffee",
-                    "className": [
-                        "tab17"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1480106164000
-                        },
-                        "filter": true,
-                        "title": "sessions.coffee",
-                        "tooltip": "/coffee/models/sessions.coffee",
+                        "title": "package.json",
+                        "tooltip": "/package.json",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -290,7 +227,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/coffee/models/sessions.coffee"
+            "/package.json"
         ]
     }
 }

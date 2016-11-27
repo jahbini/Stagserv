@@ -17,6 +17,8 @@ base.exports = (req, res) ->
   delete req.body._id
   console.log "Which id= ",whichId
   console.log "NEW EVENT ",req.params
+  # force event data into string form for download parser assist
+  req.body.readings = '"' + req.body.readings + '"'
   Event.model.findByIdAndUpdate(
     whichId,
     {$set: req.body}
