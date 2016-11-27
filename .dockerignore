@@ -1,0 +1,4 @@
+# files and directories not to put into the docker container
+node_modules/*
+.c9
+.git

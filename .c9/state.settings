@@ -6,6 +6,7 @@
         "json()": {
             "meta": {
                 "accessList": [
+                    "searchResults",
                     "tab1",
                     "tab0"
                 ]
@@ -30,12 +31,12 @@
                         "terminal": {
                             "id": "devel_726",
                             "cwd": "",
-                            "width": 876,
-                            "height": 127
+                            "width": 0,
+                            "height": 0
                         }
                     },
                     "editorType": "terminal",
-                    "active": true
+                    "active": false
                 },
                 {
                     "type": "tab",
@@ -50,6 +51,30 @@
                     },
                     "editorType": "immediate",
                     "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "searchResults",
+                    "path": "/.c9/searchresults",
+                    "className": [
+                        "searchResults",
+                        "changed"
+                    ],
+                    "document": {
+                        "changed": true,
+                        "meta": {
+                            "searchResults": true,
+                            "ignoreSave": true,
+                            "newfile": true,
+                            "timestamp": 1480287072867
+                        },
+                        "filter": true,
+                        "title": "Search Results",
+                        "tooltip": "/.c9/searchresults",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
                 }
             ],
             "skin": "editor_tab",
@@ -70,19 +95,19 @@
     },
     "ext": {
         "counters": {
-            "@ace": 1,
-            "@acestatus": 1,
+            "@ace": 2,
+            "@acestatus": 2,
             "@datagrid": 1,
             "@divider": 5,
-            "@document": 7,
+            "@document": 19,
             "@form": 5,
             "@menu": 5,
             "@menuitem": 13,
             "@pane": 2,
             "@preferences": 1,
-            "@session": 6,
-            "@tab": 7,
-            "@undoManager": 7
+            "@session": 18,
+            "@tab": 18,
+            "@undoManager": 19
         }
     },
     "findinfiles": {
@@ -100,8 +125,8 @@
     },
     "panecycle": {
         "json()": [
-            "tab6",
-            "tab0"
+            "tab17",
+            "searchResults"
         ]
     },
     "panels": {
@@ -132,50 +157,66 @@
         }
     },
     "projecttree": {
-        "@scrollpos": 21,
+        "@scrollpos": -10,
         "@showfs": true,
         "expanded": {
             "json()": [
                 "/",
-                "/coffee",
                 "/coffee/models",
-                "/node_modules"
+                "/client",
+                "/public",
+                "/templates",
+                "/templates/views",
+                "/coffee",
+                "/coffee/templates",
+                "/coffee/templates/views",
+                "/templates/views/New Folder",
+                "/templates/views/errors",
+                "/coffee/templates/views/New Folder",
+                "/coffee/templates/views/errors",
+                "/templates/layouts",
+                "/templates/mixins"
             ]
         }
     },
     "recentfiles": {
         "json()": []
     },
+    "search-history": {
+        "searchfiles": {
+            "json()": [
+                "FWLevel"
+            ]
+        }
+    },
     "tabs": {
         "json()": {
-            "focus": "/coffee/web.coffee",
+            "focus": "/.c9/searchresults",
             "meta": {
                 "accessList": [
-                    "tab6",
-                    "tab2",
-                    "tab3",
-                    "tab5",
-                    "tab4"
+                    "tab17",
+                    "tab16",
+                    "tab13",
+                    "tab7"
                 ]
             },
             "name": "pane0",
             "nodes": [
                 {
                     "type": "tab",
-                    "name": "tab3",
-                    "path": "/coffee/models/protocols.coffee",
+                    "name": "tab7",
+                    "path": "/Dockerfile",
                     "className": [
-                        "tab3",
-                        "changed"
+                        "tab7"
                     ],
                     "document": {
-                        "changed": true,
+                        "changed": false,
                         "meta": {
-                            "timestamp": 1480108043000
+                            "timestamp": 1480208587084
                         },
                         "filter": true,
-                        "title": "protocols.coffee",
-                        "tooltip": "/coffee/models/protocols.coffee",
+                        "title": "Dockerfile",
+                        "tooltip": "/Dockerfile",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -183,104 +224,59 @@
                 },
                 {
                     "type": "tab",
-                    "name": "tab4",
-                    "path": "/coffee/models/sessions.coffee",
+                    "name": "tab13",
+                    "path": "/docker-compose.yml",
                     "className": [
-                        "tab4"
+                        "tab13"
                     ],
                     "document": {
-                        "filter": true,
-                        "title": "sessions.coffee",
-                        "tooltip": "/coffee/models/sessions.coffee",
-                        "ace": {
-                            "folds": [],
-                            "scrolltop": 736.5,
-                            "scrollleft": 0,
-                            "selection": {
-                                "start": {
-                                    "row": 32,
-                                    "column": 14
-                                },
-                                "end": {
-                                    "row": 32,
-                                    "column": 14
-                                },
-                                "isBackwards": false
-                            },
-                            "options": {
-                                "guessTabSize": true,
-                                "useWrapMode": false,
-                                "wrapToView": true
-                            },
-                            "firstLineState": 0
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1476581216000
                         },
-                        "hash": "2cb818a8c9b9910c417124d7b02cf9dba4b98427",
+                        "filter": true,
+                        "title": "docker-compose.yml",
+                        "tooltip": "/docker-compose.yml",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab16",
+                    "path": "/templates/layouts/base.pug",
+                    "className": [
+                        "tab16"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1480276676941
+                        },
+                        "filter": true,
+                        "title": "base.pug",
+                        "tooltip": "/templates/layouts/base.pug",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab17",
+                    "path": "/coffee/models/sessions.coffee",
+                    "className": [
+                        "tab17"
+                    ],
+                    "document": {
+                        "changed": false,
                         "meta": {
                             "timestamp": 1480106164000
                         },
-                        "changed": false
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab5",
-                    "path": "/coffee/models/sensor-tags.coffee",
-                    "className": [
-                        "tab5"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1480108432000
-                        },
                         "filter": true,
-                        "title": "sensor-tags.coffee",
-                        "tooltip": "/coffee/models/sensor-tags.coffee",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab2",
-                    "path": "",
-                    "className": [
-                        "tab2"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1480188132406
-                        },
-                        "filter": true,
-                        "title": "Preferences",
-                        "preferences": {
-                            "activePanel": "preferences.project",
-                            "section": "Code Editor (Ace)"
-                        }
-                    },
-                    "editorType": "preferences",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab6",
-                    "path": "/coffee/web.coffee",
-                    "className": [
-                        "tab6",
-                        "focus"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1478727473000
-                        },
-                        "filter": true,
-                        "title": "web.coffee",
-                        "tooltip": "/coffee/web.coffee",
+                        "title": "sessions.coffee",
+                        "tooltip": "/coffee/models/sessions.coffee",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -294,7 +290,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/coffee/web.coffee"
+            "/coffee/models/sessions.coffee"
         ]
     }
 }

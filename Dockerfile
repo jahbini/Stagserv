@@ -10,8 +10,6 @@ RUN npm install
 
 ADD . /Stagserv-master
 #RUN curl -LOu jahbini:Tqbfj0tlD https://github.com/jahbini/Stagserv/archive/master.zip && unzip master.zip && rm master.zip
-RUN echo ferst && pwd && ls -lisa
-VOLUME /Stagapp-master/public
-RUN ln -s /Stagapp-master/public /Stagserv-master/public && pwd && ls -lisa
+VOLUME /Stagserv-master/public
 expose 3030
 CMD npm run start || sleep 500

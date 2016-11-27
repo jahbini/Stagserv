@@ -59,7 +59,7 @@ Session.add
   platformUUID: type: Types.Text
   platformIosVersion: Types.Text
   applicationVersion: Types.Text
-  # types desired from github issue stagapp:93
+  # types desired from github issue stagapp:93 and 99
   SerialNoL: Types.Text
   SerialNoR: Types.Text
   FWLevelL: Types.Text
