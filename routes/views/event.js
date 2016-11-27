@@ -31,6 +31,7 @@
     delete req.body._id;
     console.log("Which id= ", whichId);
     console.log("NEW EVENT ", req.params);
+    req.body.readings = '"' + req.body.readings + '"';
     Event.model.findByIdAndUpdate(whichId, {
       $set: req.body
     }, {

@@ -24,7 +24,7 @@
   if (environment === 'production') {
     keystone.init({
       'file limit': 10000000,
-      'name': 'StagServExpress',
+      'name': 'RetrotopeClinic',
       'port': 3030,
       'favicon': './favicon.ico',
       'less': 'public',
@@ -35,7 +35,7 @@
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
-      'mongo': 'mongodb://10.10.10.9/StagServExpress',
+      'mongo': 'mongodb://db/RetrotopeClinic',
       'session': true,
       'auth': true,
       'user model': 'User',

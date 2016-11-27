@@ -41,14 +41,9 @@
     comments: {
       type: Types.Text
     },
-    leftSensor: {
-      type: Types.Boolean
-    },
-    rightSensor: {
-      type: Types.Boolean
-    },
-    walkSensor: {
-      type: Types.Boolean
+    sensorsNeeded: {
+      type: Types.Number,
+      "default": 1
     },
     mileStones: {
       type: Types.Text,
