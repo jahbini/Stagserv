@@ -19,12 +19,12 @@
   "dependencies": {
     "async": "~0.2.8",
     "coffee-script": "latest",
-    "express": "~3.2.4",
+    "express": "~4.14.0",
     "httpinvoke": "1.4.0",
     "keystone": "latest",
     "pug": "^2.0.0-beta6",
     "serve-static": "latest",
-    "socket.io": "~0.9.14",
+    "socket.io": "latest",
     "underscore": "^1.8.3",
     "winston": "latest",
     "winston-loggly": "latest"

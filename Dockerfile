@@ -2,7 +2,7 @@ FROM mhart/alpine-node-auto:latest
 MAINTAINER jim@bamboocando.com
 
 RUN mkdir /Stagserv-master && apk update
-RUN apk add curl
+RUN apk add curl python make
 
 WORKDIR /Stagserv-master
 ADD package.json /Stagserv-master

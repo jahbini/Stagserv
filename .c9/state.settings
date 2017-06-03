@@ -6,9 +6,9 @@
         "json()": {
             "meta": {
                 "accessList": [
+                    "tab0",
                     "searchResults",
-                    "tab1",
-                    "tab0"
+                    "tab1"
                 ]
             },
             "name": "pane1",
@@ -21,10 +21,6 @@
                         "tab0"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1479453295562
-                        },
                         "filter": true,
                         "title": "bash - \"BambooCanDo.local\" ",
                         "tooltip": "bash - \"BambooCanDo.local\" ",
@@ -32,8 +28,14 @@
                             "id": "devel_726",
                             "cwd": "",
                             "width": 0,
-                            "height": 0
-                        }
+                            "height": 0,
+                            "scrollTop": 1004
+                        },
+                        "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "meta": {
+                            "timestamp": 1479453295562
+                        },
+                        "changed": false
                     },
                     "editorType": "terminal",
                     "active": false
@@ -66,7 +68,7 @@
                             "searchResults": true,
                             "ignoreSave": true,
                             "newfile": true,
-                            "timestamp": 1480287072867
+                            "timestamp": 1494044538781
                         },
                         "filter": true,
                         "title": "Search Results",
@@ -99,22 +101,23 @@
             "@acestatus": 2,
             "@datagrid": 1,
             "@divider": 5,
-            "@document": 26,
-            "@form": 5,
+            "@document": 9,
+            "@form": 6,
             "@menu": 5,
             "@menuitem": 13,
             "@pane": 2,
             "@preferences": 1,
-            "@session": 25,
-            "@tab": 25,
-            "@undoManager": 26
+            "@session": 7,
+            "@tab": 7,
+            "@undoManager": 9,
+            "@welcome": 1
         }
     },
     "findinfiles": {
         "@console": "true",
-        "@matchcase": "false",
+        "@matchcase": true,
         "@regex": "false",
-        "@scope": "selection",
+        "@scope": "workspace",
         "@wholeword": "false"
     },
     "menus": {
@@ -131,6 +134,10 @@
     },
     "panels": {
         "@active-left": "tree",
+        "collab": {
+            "@enabled": "true",
+            "@name": "collab"
+        },
         "commands.panel": {
             "@enabled": "true",
             "@name": "commands.panel"
@@ -157,24 +164,21 @@
         }
     },
     "projecttree": {
-        "@scrollpos": -10,
+        "@scrollpos": 187,
         "@showfs": true,
         "expanded": {
             "json()": [
                 "/",
                 "/client",
-                "/public",
                 "/templates/views",
-                "/coffee/templates",
                 "/coffee/templates/views",
-                "/templates/views/New Folder",
                 "/templates/views/errors",
-                "/coffee/templates/views/New Folder",
                 "/coffee/templates/views/errors",
                 "/templates/layouts",
                 "/templates/mixins",
-                "/coffee/routes",
-                "/coffee/routes/views"
+                "/coffee",
+                "/models",
+                "/coffee/models"
             ]
         }
     },
@@ -184,6 +188,7 @@
     "search-history": {
         "searchfiles": {
             "json()": [
+                "loggly",
                 "FWLevel"
             ]
         }
@@ -193,7 +198,12 @@
             "focus": "/package.json",
             "meta": {
                 "accessList": [
-                    "tab24"
+                    "tab24",
+                    "tab6",
+                    "tab2",
+                    "tab4",
+                    "tab3",
+                    "tab5"
                 ]
             },
             "name": "pane0",
@@ -209,7 +219,7 @@
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1479617643000
+                            "timestamp": 1484266373000
                         },
                         "filter": true,
                         "title": "package.json",
@@ -218,6 +228,155 @@
                     },
                     "editorType": "ace",
                     "active": true
+                },
+                {
+                    "type": "tab",
+                    "name": "tab2",
+                    "path": "",
+                    "className": [
+                        "tab2"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "welcome": true,
+                            "timestamp": 1481757800161
+                        },
+                        "filter": true,
+                        "title": "Welcome",
+                        "welcome": {}
+                    },
+                    "editorType": "welcome",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab3",
+                    "path": "/models/protocols.js",
+                    "className": [
+                        "tab3"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "protocols.js",
+                        "tooltip": "/models/protocols.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "39c9af912974518adab4bf86a48858ed368a501d",
+                        "meta": {
+                            "timestamp": 1484335878000
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab4",
+                    "path": "/models/sessions.js",
+                    "className": [
+                        "tab4"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1484335878000
+                        },
+                        "filter": true,
+                        "title": "sessions.js",
+                        "tooltip": "/models/sessions.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab5",
+                    "path": "/web.js",
+                    "className": [
+                        "tab5"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "web.js",
+                        "tooltip": "/web.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 1715.5,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 106,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            },
+                            "cleansed": true
+                        },
+                        "hash": "1934b026b4281f89bf397206baba7081c75ca4a1",
+                        "meta": {
+                            "timestamp": 1484335879000
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab6",
+                    "path": "/coffee/models/sessions.coffee",
+                    "className": [
+                        "tab6"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1496357868495
+                        },
+                        "filter": true,
+                        "title": "sessions.coffee",
+                        "tooltip": "/coffee/models/sessions.coffee",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
                 }
             ],
             "skin": "editor_tab",

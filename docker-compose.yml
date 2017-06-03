@@ -19,7 +19,6 @@ services:
       - app
     environment:
       - NODE_ENV=development
-#      - VIRTUAL_HOST=138.68.45.111
       - VIRTUAL_HOST=sensor-test.tell140.com
       - VIRTUAL_PORT=3030
     expose:

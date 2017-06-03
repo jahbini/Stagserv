@@ -67,5 +67,5 @@ Session.add
   password: Types.Text
   
 
-Session.defaultColumns = 'captureDate, accepted, clinician, client, testID'
+Session.defaultColumns = 'captureDate|25%, accepted|10%, clinician, client, testID'
 Session.register()
