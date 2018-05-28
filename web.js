@@ -30,7 +30,7 @@
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
-      'mongo': 'mongodb://db/RetrotopeClinic',
+      'mongo': 'mongodb://db/StagServExpress',  # use development database only
       'session': true,
       'auth': true,
       'user model': 'User',
