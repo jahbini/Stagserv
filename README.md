@@ -31,14 +31,17 @@ All commands are issued in the `/retro` directory that contains the `docker-comp
 
 ### Generating or Restoring the Backup
 
-1) Tar up the entire db sub directory with `tar tgz db >database.tgz`.  That's your back up.  Simply untar it to restore mongo on the next start-up.  Or really screw mongo up if you try that on a running system. Bin there Dun that.  Check the logs with `docker-compse logs`, make sure the process have all been shutdown before running the tar.
+1) Tar up the entire db sub directory with `tar cz db >database.tgz`.  That's your back up.  Simply untar it to restore mongo on the next start-up.  Or really screw mongo up if you try that on a running system. Bin there Dun that.  Check the logs with `docker-compse logs`, make sure the process have all been shutdown before running the tar.
 1) Move the old db directory away so that it's old contents are no longer accessable. Put it and the log files someplace safe if you want forensic information.
-1) Untar the tar file `tar txz database.tgz`
+1) Untar the tar file `tar xfz database.tgz`
 
 
 ### Starting the server
 1) Check to see if the system is stopped with the shell command `docker-compose ps`
 1) issue the command `nohup docker-compose start`.  That command will allow the processes to continue after you log out.
+
+## screenshots
+see https://github.com/jahbini/Stagserv/issues/43
 
 ### more elaborate alternatives
 
