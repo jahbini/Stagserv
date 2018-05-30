@@ -1,6 +1,6 @@
 # Operational notes for stag serv
 
-Congratulations on your your purchase of a clinical recording system that has been hardened through years agile development and in-flight QA.  This document will describe operational information of that server.
+Congratulations on your your purchase of a clinical recording system that has been hardened through years of agile development and in-flight QA.  This document will describe operational information for that server.
 
 The server runs as Docker style containers on a digital ocean host.  the containers allow the separation of the server into well defined process environments: web server, web application, API server, Database engine. The main interface to the container envirnment are the programs `docker` and `docker-compose` run from the bash command line.
 
