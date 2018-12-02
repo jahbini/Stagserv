@@ -26,7 +26,7 @@
     "serve-static": "latest",
     "socket.io": "latest",
     "underscore": "^1.8.3",
-    "winston": "latest",
+    "winston": "2.*",
     "winston-loggly": "latest"
   },
   "devDependencies": {

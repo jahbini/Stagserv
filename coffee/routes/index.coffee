@@ -31,7 +31,6 @@ temp = (app) ->
   statics = require('serve-static')
   app.all '/*', keystone.middleware.cors
   app.get '/sample', routes.views.index
-  app.get '/', statics('./public', 'index': 'stagapp.html')
   app.get '/clinics', routes.views.clinics
   app.get '/protocols', routes.views.protocols
   app.get '/sensor-tag/:id', routes.views.sensorTag
@@ -40,6 +39,7 @@ temp = (app) ->
   app.post '/event', routes.views.event
   app.post '/session', routes.views.session
   app.put '/session', routes.views.session
+  app.get '/*', statics('/home/solo/stagapp/public/', 'index': 'index.html')
   return
 
 if window? then window.exports = temp # for the web
