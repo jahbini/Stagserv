@@ -5,6 +5,8 @@
  */
 
 (function() {
+  require('./unit-configs.js');
+
   require('./users.js');
 
   require('./clinics.js');

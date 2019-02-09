@@ -32,7 +32,7 @@ Protocol.add
   comments: type: Types.Text
   sensorsNeeded: type: Types.Number , default: 0
 
-  showLeadIn: type: Types.Boolean, default: true
+  showLeadIn: type: Types.Boolean, default: false
   leadInDuration: type: Types.Number, default: 5
 
   showPractice: type: Types.Boolean, default: false
@@ -40,6 +40,9 @@ Protocol.add
 
   testDuration: type: Types.Number, default:0
 
+  mileStonesAreProtocols: type: Types.Boolean, default: false
+  cloneable: type: Types.Boolean, default: false
+  suppressInDropDown: type: Types.Boolean, default: false
   showMileStones: type: Types.Boolean, default: false
   mileStoneText: type:Types.Text, default: "The test"
 

@@ -14,10 +14,12 @@ Sample.add ({
 Sample.register();
 ###
 
-Device = new (keystone.List)('Device')
-Device.add
-  uuid:
+UnitConfig = new (keystone.List)('UnitConfig')
+UnitConfig.add
+  loginPassword:
     type: Types.Text
-    index: true
-  nickName: type: Types.Text
-Device.register()
+    default: "retro2019"
+  unlock:
+    type: Types.Text
+    default: "6180339"
+UnitConfig.register()

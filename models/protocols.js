@@ -47,7 +47,7 @@
     },
     showLeadIn: {
       type: Types.Boolean,
-      "default": true
+      "default": false
     },
     leadInDuration: {
       type: Types.Number,
@@ -61,13 +61,21 @@
       type: Types.Number,
       "default": 5
     },
-    showGo: {
-      type: Types.Boolean,
-      "default": false
-    },
     testDuration: {
       type: Types.Number,
       "default": 0
+    },
+    mileStonesAreProtocols: {
+      type: Types.Boolean,
+      "default": false
+    },
+    cloneable: {
+      type: Types.Boolean,
+      "default": false
+    },
+    suppressInDropDown: {
+      type: Types.Boolean,
+      "default": false
     },
     showMileStones: {
       type: Types.Boolean,
@@ -75,7 +83,7 @@
     },
     mileStoneText: {
       type: Types.Text,
-      "default": "Press Go to start the 30 second test"
+      "default": "The test"
     },
     mileStones: {
       type: Types.Text,
