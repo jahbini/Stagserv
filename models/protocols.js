@@ -81,6 +81,16 @@
       type: Types.Boolean,
       "default": false
     },
+    engine: {
+      type: Types.Select,
+      options: ['stroop', 'smdt', 'tapping'],
+      "default": 'tapping'
+    },
+    entropy: {
+      type: Types.Select,
+      options: ['low', 'medium', 'high'],
+      "default": 'medium'
+    },
     mileStoneText: {
       type: Types.Text,
       "default": "The test"

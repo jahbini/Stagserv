@@ -26,7 +26,6 @@
         res.send(configs);
       }
     });
-    console.log('Configuration model queried');
   };
 
 }).call(this);

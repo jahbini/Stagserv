@@ -15,5 +15,4 @@ base.exports = (req, res) ->
     else
       res.send(configs)
       return
-  console.log 'Configuration model queried'
   return
