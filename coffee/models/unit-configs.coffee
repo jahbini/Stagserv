@@ -22,4 +22,5 @@ UnitConfig.add
   unlock:
     type: Types.Text
     default: "6180339"
+UnitConfig.defaultColumns = 'loginPassword,unlock'
 UnitConfig.register()

@@ -33,6 +33,8 @@
     }
   });
 
+  UnitConfig.defaultColumns = 'loginPassword,unlock';
+
   UnitConfig.register();
 
 }).call(this);
