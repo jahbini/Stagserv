@@ -91,6 +91,10 @@
       options: ['low', 'medium', 'high'],
       "default": 'medium'
     },
+    demoOnly: {
+      type: Types.Boolean,
+      "default": false
+    },
     mileStoneText: {
       type: Types.Text,
       "default": "The test"
