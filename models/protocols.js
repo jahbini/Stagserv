@@ -83,7 +83,7 @@
     },
     engine: {
       type: Types.Select,
-      options: ['stroop', 'smdt', 'tapping'],
+      options: ['stroop', 'sdmt', 'tapping'],
       "default": 'tapping'
     },
     entropy: {
