@@ -100,6 +100,7 @@
       'file limit': 10000000,
       'name': 'StagServExpress',
       'port': 3030,
+      'host': '0.0.0.0',
       'favicon': './favicon.ico',
       'less': 'public',
       'static': ['public'],

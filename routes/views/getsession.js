@@ -21,12 +21,13 @@
     view = new keystone.View(req, res);
     Session.model.findById(req.params.id).exec(function(err, session) {
       if (err) {
+        console.log('Session fail on model queried');
+        console.log(req.params);
         console.log(err);
       } else {
         res.send(session);
       }
     });
-    console.log('User model queried');
   };
 
 }).call(this);

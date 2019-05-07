@@ -45,13 +45,13 @@ glib= (any)->
 base.exports = (req, res) ->
   uuid = req.params.id
   view = new (keystone.View)(req, res)
-  req.body.UUID = uuid
+  req.body.uuid = uuid
   req.body.nickname = glib uuid
   t = new (SensorTag.model)(req.body)
   console.log "accessing SensorTag info"
   console.log req.params
   console.log t
-  SensorTag.model.find().where('UUID', uuid).exec (err, tagInfo) ->
+  SensorTag.model.find().where('uuid', uuid).exec (err, tagInfo) ->
     if !tagInfo[0]
       err = "not found"
       tagInfo = null
@@ -73,7 +73,7 @@ base.exports = (req, res) ->
           .send error: error
         else
           console.log 'sensorTag added ' + ' to the database.'
-          t._id = t.UUID
+          t._id = t.uuid
           console.log t
           res.status 200
           .send t
@@ -82,9 +82,9 @@ base.exports = (req, res) ->
     else
       console.log 'SensorTag reply'
       try
-        tagInfo._id = tagInfo.UUID
+        tagInfo._id = tagInfo.uuid
       catch huh
-        console.log "Bad UUID??"
+        console.log "Bad uuid??"
       console.log tagInfo
       console.log 'SensorTag info'
       res.status 200

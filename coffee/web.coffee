@@ -87,9 +87,10 @@ else if environment == 'testing'
 else
   environment = "development"
   keystone.init
-    'file limit': 10000000,
+    'file limit': 10000000
     'name': 'StagServExpress'
-    'port':3030,
+    'port':3030
+    'host':'0.0.0.0'
     'favicon': './favicon.ico'
     'less': 'public'
     'static': [ 'public' ]

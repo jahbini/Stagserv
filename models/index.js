@@ -17,6 +17,8 @@
 
   require('./sensor-tags.js');
 
+  require('./handhelds.js');
+
   require('./protocols.js');
 
 }).call(this);

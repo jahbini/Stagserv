@@ -54,13 +54,13 @@
     var t, uuid, view;
     uuid = req.params.id;
     view = new keystone.View(req, res);
-    req.body.UUID = uuid;
+    req.body.uuid = uuid;
     req.body.nickname = glib(uuid);
     t = new SensorTag.model(req.body);
     console.log("accessing SensorTag info");
     console.log(req.params);
     console.log(t);
-    SensorTag.model.find().where('UUID', uuid).exec(function(err, tagInfo) {
+    SensorTag.model.find().where('uuid', uuid).exec(function(err, tagInfo) {
       var huh;
       if (!tagInfo[0]) {
         err = "not found";
@@ -85,7 +85,7 @@
             });
           } else {
             console.log('sensorTag added ' + ' to the database.');
-            t._id = t.UUID;
+            t._id = t.uuid;
             console.log(t);
             res.status(200).send(t);
             console.log('SensorTag info');
@@ -94,10 +94,10 @@
       } else {
         console.log('SensorTag reply');
         try {
-          tagInfo._id = tagInfo.UUID;
+          tagInfo._id = tagInfo.uuid;
         } catch (error1) {
           huh = error1;
-          console.log("Bad UUID??");
+          console.log("Bad uuid??");
         }
         console.log(tagInfo);
         console.log('SensorTag info');
