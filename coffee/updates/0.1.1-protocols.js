@@ -23,7 +23,6 @@
       dataObject = allData[i];
       f = dataObject.fields;
       f.id = dataObject.id;
-      f._id = dataObject.id;
       (new KeystoneList.model(f)).save();
     }
     done();

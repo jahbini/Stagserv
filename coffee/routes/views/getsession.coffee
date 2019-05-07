@@ -13,8 +13,22 @@ base.exports = (req, res) ->
       console.log 'Session fail on model queried'
       console.log req.params
       console.log err
+      res.status 404
+      res.send 'not found'
       return
     else
-      res.send session
+      console.log "session Found as",session
+      n= Object.assign {},session._doc
+      console.log "session as n",n
+      delete n._id
+      n.readings = ""
+      n.events = []
+      delete n.captureDate
+      newSession = new Session.model n
+      newSession.save (err,newlyFormed)->
+        if err
+          res.status 400
+        console.log  "newsession",newlyFormed
+        res.send newlyFormed
       return
   return

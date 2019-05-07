@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "~0.2.8",
     "coffee-script": "latest",
+    "dotenv": "^7.0.0",
     "express": "~4.14.0",
     "httpinvoke": "1.4.0",
     "keystone": "latest",
