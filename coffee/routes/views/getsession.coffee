@@ -22,7 +22,7 @@ base.exports = (req, res) ->
       delete n._id
       n.readings = ""
       n.events = []
-      n.captureDate = null
+      delete n.captureDate
       newSession = new Session.model n
       newSession.save (err,newlyFormed)->
         if err
