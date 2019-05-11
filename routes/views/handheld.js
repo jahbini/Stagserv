@@ -25,7 +25,7 @@
     var view, whichId;
     view = new keystone.View(req, res);
     whichId = req.body._id;
-    console.log("HANDHELD Which id= ", whichId);
+    console.log("Put/Post HANDHELD Which id= ", whichId);
     console.log(req.body);
     debugger;
     Handheld.model.findByIdAndUpdate(whichId, {

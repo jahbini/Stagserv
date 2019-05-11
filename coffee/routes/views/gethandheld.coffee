@@ -9,22 +9,22 @@ if module?.exports? then base = module
 base.exports = (req, res) ->
   platformUUID = req.params.id || req.body.platformUUID
   view = new (keystone.View)(req, res)
-  #console.log "accessing Handheld info for #{platformUUID}"
-  #console.log req.params
+  console.log "accessing getHandheld info for #{platformUUID}"
+  console.log req.params
   t = new (Handheld.model)(req.body)
-  #console.log t
+  console.log "T=",t
   req.body.platformUUID = platformUUID
-  #req.body.nickname = glib platformUUID
+  req.body.nickname = glib platformUUID
   Handheld.model.find().where('platformUUID', platformUUID).exec (err, tagInfo) ->
     if !tagInfo[0]
       err = "Handheld info not found"
       tagInfo = null
     else
       tagInfo = tagInfo[0]
-    #console.log "Handheld search results"
-    #console.log err
-    #console.log tagInfo
-    #console.log "------Handheld--------"
+    console.log "Handheld search results"
+    console.log err
+    console.log tagInfo
+    console.log "------Handheld--------"
     if err
       console.log "Handheld no old, inserting " + platformUUID
       console.log err
@@ -36,8 +36,8 @@ base.exports = (req, res) ->
           res.status 500
           .send error: error
         else
-          #console.log 'new Handheld added ' + ' to the database.'
-          #console.log t
+          console.log 'new Handheld added ' + ' to the database.'
+          console.log t
           res.status 200
           .send t
           #console.log 'Handheld info'
