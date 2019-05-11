@@ -50,10 +50,11 @@ Handhelds.add
   testID: type: Types.Text
   password: type: Types.Text
   clientUnlock: type:Types.Text
+  clientUnlockOK: type: Types.Boolean, default: false
 
   lastSession:
     type: Types.Relationship
     ref: 'Session'
 
-Handhelds.defaultColumns = 'platformUUID, clinician,testID,lastSession'
+Handhelds.defaultColumns = 'platformUUID, clinician,clientUnlock,clientUnlockOK,testID'
 Handhelds.register()

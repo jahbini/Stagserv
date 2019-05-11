@@ -20,8 +20,12 @@
     var platformUUID, t, view;
     platformUUID = req.params.id || req.body.platformUUID;
     view = new keystone.View(req, res);
+    console.log("accessing getHandheld info for " + platformUUID);
+    console.log(req.params);
     t = new Handheld.model(req.body);
+    console.log("T=", t);
     req.body.platformUUID = platformUUID;
+    req.body.nickname = glib(platformUUID);
     Handheld.model.find().where('platformUUID', platformUUID).exec(function(err, tagInfo) {
       if (!tagInfo[0]) {
         err = "Handheld info not found";
@@ -29,6 +33,10 @@
       } else {
         tagInfo = tagInfo[0];
       }
+      console.log("Handheld search results");
+      console.log(err);
+      console.log(tagInfo);
+      console.log("------Handheld--------");
       if (err) {
         console.log("Handheld no old, inserting " + platformUUID);
         console.log(err);
@@ -41,6 +49,8 @@
               error: error
             });
           } else {
+            console.log('new Handheld added ' + ' to the database.');
+            console.log(t);
             res.status(200).send(t);
           }
         });
