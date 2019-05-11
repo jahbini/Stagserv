@@ -1,6 +1,6 @@
 {
   "name": "SensorTag-Capture",
-  "version": "3.0.1-test",
+  "version": "3.0.4-test",
   "description": "Data capture for clinical investigation of SensorTag data",
   "main": "server.js",
   "repository": "",
