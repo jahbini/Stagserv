@@ -42,6 +42,7 @@ Session.add
     type: Types.Relationship
     ref: 'Event'
     many: true
+    hidden: true
   clinic:
     type: Types.Relationship
     ref: 'Clinic'
@@ -54,7 +55,6 @@ Session.add
   testID: type: Types.Text
   accepted:
     type: Types.Boolean
-    default: true
     
   platformUUID: type: Types.Text
   platformIosVersion: Types.Text

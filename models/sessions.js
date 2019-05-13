@@ -53,7 +53,8 @@
     events: {
       type: Types.Relationship,
       ref: 'Event',
-      many: true
+      many: true,
+      hidden: true
     },
     clinic: {
       type: Types.Relationship,
@@ -71,8 +72,7 @@
       type: Types.Text
     },
     accepted: {
-      type: Types.Boolean,
-      "default": true
+      type: Types.Boolean
     },
     platformUUID: {
       type: Types.Text
