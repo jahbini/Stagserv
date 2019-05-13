@@ -29,6 +29,7 @@ Handhelds.add
     noedit: true
     index: true
     unique: true
+
   nickname:
     type: Types.Text
     noedit: true

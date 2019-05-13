@@ -43,9 +43,9 @@
     app.get('/session/:id', routes.views.getsession);
     app.post('/session', routes.views.session);
     app.put('/session', routes.views.session);
-    app.get('/handheld/:id', routes.views.gethandheld);
+    app.get('/handheld/:id', routes.views.handheld);
     app.put('/handheld/:id', routes.views.handheld);
-    app.post('/handheld', routes.views.gethandheld);
+    app.post('/handheld', routes.views.handheld);
     app.get('/*', statics('/home/solo/stagapp/public/', {
       'index': 'index.html'
     }));
