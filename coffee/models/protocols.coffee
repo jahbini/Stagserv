@@ -40,10 +40,15 @@ Protocol.add
 
   testDuration: type: Types.Number, default:0
 
-  mileStonesAreProtocols: type: Types.Boolean, default: false
   cloneable: type: Types.Boolean, default: false
+  lockDown: type: Types.Boolean
   suppressInDropDown: type: Types.Boolean, default: false
+
+  #showMileStones deprecated as externalDeviceTest
   showMileStones: type: Types.Boolean, default: false
+  externalDeviceTest: type: Types.Boolean
+
+  mileStonesAreProtocols: type: Types.Boolean, default: false
   engine:  type: Types.Select, options: ['stroop','sdmt', 'tapping'], default: 'tapping'
   entropy: type: Types.Select, options: ['low','medium','high'], default: 'medium'
   demoOnly: type: Types.Boolean, default: false
