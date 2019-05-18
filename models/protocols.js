@@ -41,9 +41,6 @@
     comments: {
       type: Types.Text
     },
-    huntington: {
-      type: Types.Boolean
-    },
     gestureCapture: {
       type: Types.Boolean
     },
@@ -74,15 +71,7 @@
       type: Types.Number,
       "default": 0
     },
-    cloneable: {
-      type: Types.Boolean,
-      "default": false
-    },
     suppressInDropDown: {
-      type: Types.Boolean,
-      "default": false
-    },
-    showMileStones: {
       type: Types.Boolean,
       "default": false
     },
