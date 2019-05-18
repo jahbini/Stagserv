@@ -65,19 +65,25 @@
       type: Types.Number,
       "default": 0
     },
-    mileStonesAreProtocols: {
-      type: Types.Boolean,
-      "default": false
-    },
     cloneable: {
       type: Types.Boolean,
       "default": false
+    },
+    lockDown: {
+      type: Types.Boolean
     },
     suppressInDropDown: {
       type: Types.Boolean,
       "default": false
     },
     showMileStones: {
+      type: Types.Boolean,
+      "default": false
+    },
+    externalDeviceTest: {
+      type: Types.Boolean
+    },
+    mileStonesAreProtocols: {
       type: Types.Boolean,
       "default": false
     },
