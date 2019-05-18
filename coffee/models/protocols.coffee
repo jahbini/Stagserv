@@ -30,7 +30,11 @@ Protocol.add
     unique: true
     default: "Other"
   comments: type: Types.Text
+
+  externalDeviceTest: type: Types.Boolean
   sensorsNeeded: type: Types.Number , default: 0
+
+  lockDown: type: Types.Boolean
 
   showLeadIn: type: Types.Boolean, default: false
   leadInDuration: type: Types.Number, default: 5
@@ -41,12 +45,10 @@ Protocol.add
   testDuration: type: Types.Number, default:0
 
   cloneable: type: Types.Boolean, default: false
-  lockDown: type: Types.Boolean
   suppressInDropDown: type: Types.Boolean, default: false
 
   #showMileStones deprecated as externalDeviceTest
   showMileStones: type: Types.Boolean, default: false
-  externalDeviceTest: type: Types.Boolean
 
   mileStonesAreProtocols: type: Types.Boolean, default: false
   engine:  type: Types.Select, options: ['stroop','sdmt', 'tapping'], default: 'tapping'

@@ -41,9 +41,15 @@
     comments: {
       type: Types.Text
     },
+    externalDeviceTest: {
+      type: Types.Boolean
+    },
     sensorsNeeded: {
       type: Types.Number,
       "default": 0
+    },
+    lockDown: {
+      type: Types.Boolean
     },
     showLeadIn: {
       type: Types.Boolean,
@@ -69,9 +75,6 @@
       type: Types.Boolean,
       "default": false
     },
-    lockDown: {
-      type: Types.Boolean
-    },
     suppressInDropDown: {
       type: Types.Boolean,
       "default": false
@@ -79,9 +82,6 @@
     showMileStones: {
       type: Types.Boolean,
       "default": false
-    },
-    externalDeviceTest: {
-      type: Types.Boolean
     },
     mileStonesAreProtocols: {
       type: Types.Boolean,
