@@ -41,7 +41,10 @@
     comments: {
       type: Types.Text
     },
-    externalDeviceTest: {
+    huntington: {
+      type: Types.Boolean
+    },
+    gestureCapture: {
       type: Types.Boolean
     },
     sensorsNeeded: {
