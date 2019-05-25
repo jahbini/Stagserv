@@ -53,6 +53,10 @@ Handhelds.add
   clientUnlock: type:Types.Text
   clientUnlockOK: type: Types.Boolean, default: false
 
+  loadLogFiles: type: Types.Boolean
+  debugString: type:  Types.Text, default: 'TIhandler,app,logon,hand,state,sensor,statistics,capture-log,network,uploader,sanity,view,admin,intro'
+
+
   lastSession:
     type: Types.Relationship
     ref: 'Session'

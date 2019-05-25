@@ -21,4 +21,6 @@
 
   require('./protocols.js');
 
+  require('./logs.js');
+
 }).call(this);

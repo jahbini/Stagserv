@@ -44,6 +44,9 @@ temp = (app) ->
   app.get '/handheld/:id', routes.views.handheld
   app.put '/handheld/:id', routes.views.handheld
   app.post '/handheld', routes.views.handheld
+  app.get '/logfile/:id', routes.views.logs
+  app.put '/logfile/:id', routes.views.logs
+  app.post '/logfile', routes.views.logs
   app.get '/*', statics('/home/solo/stagapp/public/', 'index': 'index.html')
   return
 
