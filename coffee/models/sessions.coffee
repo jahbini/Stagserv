@@ -53,6 +53,7 @@ Session.add
     type: Types.Relationship
     ref: 'User'
   testID: type: Types.Text
+  lockdownMode: type: Types.Boolean
   accepted:
     type: Types.Boolean
     

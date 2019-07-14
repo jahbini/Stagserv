@@ -50,13 +50,14 @@ Handhelds.add
 
   testID: type: Types.Text
   password: type: Types.Text
-  clientUnlock: type:Types.Text, note: "patient only - show again with Force Relock"
+  lockdownMode: type : Types.Boolean, note: "selected by clinician: tests run with unlock screen for home mode"
+  clientUnlock: type:Types.Text, note: "set to blank for unlock - Unlock code for patient only - show again with Force Relock"
+  #forceUnlock: type: Types.Boolean, default: false, note: "perform logout on client handheld"
   clientUnlockOK: type: Types.Boolean, default: false, note: "Client has used the unlock code succesfully"
-  forceRelock: type: Types.Boolean, default: false, note: "Force Relock restarts app in lockdown with Client Unlock, or quits lockdown mode when Client Unlock code is blank"
+  #forceRelock: type: Types.Boolean, default: false, note: "Force Relock restarts app in lockdown with Client Unlock, or quits lockdown mode when Client Unlock code is blank"
 
-  loadLogFiles: type: Types.Boolean , note: "Load Log Files will upload five days of app activity. Remember to turn this off!"
-  debugString: type:  Types.Text, default: 'TIhandler,app,logon,hand,state,sensor,statistics,capture-log,network,uploader,sanity,view,admin,intro', note: "modules in iOS app to monitor in the log files"
-
+  loadLogFiles: type: Types.Boolean , note: "Load Log Files will upload five days of app activity."
+  debugString: type:  Types.Text, default: '', note: "modules in iOS app to monitor in the log files - Possible values: 'TIhandler,app,logon,hand,state,sensor,statistics,capture-log,network,uploader,sanity,view,admin,intro' "
 
   lastSession:
     type: Types.Relationship

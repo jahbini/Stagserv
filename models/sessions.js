@@ -71,6 +71,9 @@
     testID: {
       type: Types.Text
     },
+    lockdownMode: {
+      type: Types.Boolean
+    },
     accepted: {
       type: Types.Boolean
     },

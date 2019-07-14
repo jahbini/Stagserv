@@ -49,15 +49,8 @@
       "default": 0
     },
     lockDown: {
-      type: Types.Boolean
-    },
-    showLeadIn: {
       type: Types.Boolean,
-      "default": false
-    },
-    leadInDuration: {
-      type: Types.Number,
-      "default": 5
+      "default": true
     },
     showPractice: {
       type: Types.Boolean,

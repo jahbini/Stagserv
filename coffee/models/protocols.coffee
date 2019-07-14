@@ -36,10 +36,11 @@ Protocol.add
   sensorsNeeded: type: Types.Number , default: 0
 
   #cloneable deprecated use lockDown
-  lockDown: type: Types.Boolean
+  lockDown: type: Types.Boolean, default: true
 
-  showLeadIn: type: Types.Boolean, default: false
-  leadInDuration: type: Types.Number, default: 5
+  # per harry e-mail of July 2019 - no lead in
+  #showLeadIn: type: Types.Boolean, default: false
+  #leadInDuration: type: Types.Number, default: 5
 
   showPractice: type: Types.Boolean, default: false
   practiceDuration: type: Types.Number, default:5
