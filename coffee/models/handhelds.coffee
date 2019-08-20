@@ -63,5 +63,5 @@ Handhelds.add
     type: Types.Relationship
     ref: 'Session'
 
-Handhelds.defaultColumns = 'platformUUID, clinician,clientUnlock,clientUnlockOK,testID'
+Handhelds.defaultColumns = 'platformUUID, clinician,lockdownMode,clientUnlock,clientUnlockOK,testID'
 Handhelds.register()

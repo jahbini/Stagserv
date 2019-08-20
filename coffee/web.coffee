@@ -21,7 +21,7 @@ if environment == 'production'
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost/RetrotopeClinic'
+    'mongo': 'mongodb://localhost:23417/RetrotopeClinic'
     'session': true
     'auth': true
     'user model': 'User'

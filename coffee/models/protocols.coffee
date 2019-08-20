@@ -36,7 +36,7 @@ Protocol.add
   sensorsNeeded: type: Types.Number , default: 0
 
   #cloneable deprecated use lockDown
-  lockDown: type: Types.Boolean, default: true
+  lockDown: type: Types.Boolean
 
   # per harry e-mail of July 2019 - no lead in
   #showLeadIn: type: Types.Boolean, default: false

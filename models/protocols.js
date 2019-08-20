@@ -49,8 +49,7 @@
       "default": 0
     },
     lockDown: {
-      type: Types.Boolean,
-      "default": true
+      type: Types.Boolean
     },
     showPractice: {
       type: Types.Boolean,
