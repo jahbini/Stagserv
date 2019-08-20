@@ -35,8 +35,10 @@ base.exports = (req, res) ->
     summary.platformIosVersion = body.platformIosVersion
     summary.captureDate = body.captureDate
 
-    console.log summary
-    winston.log('info',summary, "Session upload")
+    completion = 'INCOMPLETE' if req.body.accepted == undefined
+    completion = 'ACCEPTED' if req.body.accepted  == true
+    completion = 'REJECTED' if req.body.accepted  == false
+    winston.log('info',summary, "Session upload #{completion}")
     return
 
   view = new (keystone.View)(req, res)
@@ -44,9 +46,6 @@ base.exports = (req, res) ->
   req.body.readings = JSON.stringify(req.body.readings)
   whichId = req.body._id || new Session.model()._id.toString()
   delete req.body._id
-  console.log "Which id= ",whichId
-  console.log req.body
-  debugger
   Session.model.findByIdAndUpdate whichId,
     {$set: req.body},
     {new: true, upsert: true,setDefaultsOnInsert:true},

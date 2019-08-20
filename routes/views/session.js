@@ -31,7 +31,7 @@
     var bodyCheck, client, clinic, clinician, ref, view, whichId;
     clinic = clinician = client = false;
     bodyCheck = function(body) {
-      var summary;
+      var completion, summary;
       summary = {};
       if (!clinician) {
         return;
@@ -54,8 +54,16 @@
       summary.platformUUID = body.platformUUID;
       summary.platformIosVersion = body.platformIosVersion;
       summary.captureDate = body.captureDate;
-      console.log(summary);
-      winston.log('info', summary, "Session upload");
+      if (req.body.accepted === void 0) {
+        completion = 'INCOMPLETE';
+      }
+      if (req.body.accepted === true) {
+        completion = 'ACCEPTED';
+      }
+      if (req.body.accepted === false) {
+        completion = 'REJECTED';
+      }
+      winston.log('info', summary, "Session upload " + completion);
     };
     view = new keystone.View(req, res);
     if ((ref = req.body.clinic) != null ? ref._id : void 0) {
@@ -64,9 +72,6 @@
     req.body.readings = JSON.stringify(req.body.readings);
     whichId = req.body._id || new Session.model()._id.toString();
     delete req.body._id;
-    console.log("Which id= ", whichId);
-    console.log(req.body);
-    debugger;
     Session.model.findByIdAndUpdate(whichId, {
       $set: req.body
     }, {
