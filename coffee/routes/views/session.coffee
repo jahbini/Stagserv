@@ -26,19 +26,23 @@ base.exports = (req, res) ->
     summary.clinic = clinic.name
     summary.client = client.first+" "+client.last
     summary.clinician = clinician.first+" "+clinician.last
+    req.hostname
     if env == 'production'
-      summary.readings = "http://sensor.retrotope.com/keystone/Session/"+body.id
+      summary.readings = "http://#{req.hostname}/keystone/Session/"+body.id
+      console.log "Session URL",summary.readings
     else
       summary.readings = "http://DEVELOPMENT.ONLY/keystone/Session/"+body.id
     summary.testID = body.testID
     summary.platformUUID = body.platformUUID
     summary.platformIosVersion = body.platformIosVersion
     summary.captureDate = body.captureDate
+    summary.applicationVersion = body.applicationVersion
 
     completion = 'INCOMPLETE' if req.body.accepted == undefined
     completion = 'ACCEPTED' if req.body.accepted  == true
     completion = 'REJECTED' if req.body.accepted  == false
     winston.log('info',summary, "Session upload #{completion}")
+    console.log('info',summary, "Session upload #{completion}")
     return
 
   view = new (keystone.View)(req, res)

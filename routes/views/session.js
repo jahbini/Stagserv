@@ -45,8 +45,10 @@
       summary.clinic = clinic.name;
       summary.client = client.first + " " + client.last;
       summary.clinician = clinician.first + " " + clinician.last;
+      req.hostname;
       if (env === 'production') {
-        summary.readings = "http://sensor.retrotope.com/keystone/Session/" + body.id;
+        summary.readings = ("http://" + req.hostname + "/keystone/Session/") + body.id;
+        console.log("Session URL", summary.readings);
       } else {
         summary.readings = "http://DEVELOPMENT.ONLY/keystone/Session/" + body.id;
       }
@@ -54,6 +56,7 @@
       summary.platformUUID = body.platformUUID;
       summary.platformIosVersion = body.platformIosVersion;
       summary.captureDate = body.captureDate;
+      summary.applicationVersion = body.applicationVersion;
       if (req.body.accepted === void 0) {
         completion = 'INCOMPLETE';
       }
@@ -64,6 +67,7 @@
         completion = 'REJECTED';
       }
       winston.log('info', summary, "Session upload " + completion);
+      console.log('info', summary, "Session upload " + completion);
     };
     view = new keystone.View(req, res);
     if ((ref = req.body.clinic) != null ? ref._id : void 0) {
