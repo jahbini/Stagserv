@@ -31,6 +31,7 @@
     console.log("Put HANDHELD Which id= ", query);
     console.log(req.body);
     delete req.body._id;
+    req.body.access = Date.now();
     Handheld.model.findOneAndUpdate(query, req.body, {
       "new": true,
       upsert: true,

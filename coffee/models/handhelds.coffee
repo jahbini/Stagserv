@@ -30,6 +30,12 @@ Handhelds.add
     index: true
     unique: true
 
+  access:
+    type: Types.Datetime
+    default: 0
+    format: 'YYYY-MM-DD hh:mm:ss a'
+    index: true
+
   nickname:
     type: Types.Text
     noedit: true
@@ -63,5 +69,5 @@ Handhelds.add
     type: Types.Relationship
     ref: 'Session'
 
-Handhelds.defaultColumns = 'platformUUID, clinician,lockdownMode,clientUnlock,clientUnlockOK,testID'
+Handhelds.defaultColumns = 'platformUUID,access, clinician,lockdownMode,clientUnlock,clientUnlockOK,testID'
 Handhelds.register()
