@@ -1,5 +1,7 @@
 _ = require('underscore')
 keystone = require('keystone')
+path=require 'path'
+fs = require('fs')
 
 ###
     Initialises the standard view locals.
@@ -16,6 +18,14 @@ exports.initLocals = (req, res, next) ->
   locals = res.locals
   locals.user = req.user
   # Add your own local variables here
+  if req.body?.path
+    try
+      fullpath= process.cwd()+'/sessions/'+req.body.path
+      dir = path.dirname fullpath
+      fs.mkdirSync dir,recursive:true, ()->
+      fs.writeFile fullpath, JSON.stringify(req.body),()->
+    catch e
+      console.log e
   next()
   return
 

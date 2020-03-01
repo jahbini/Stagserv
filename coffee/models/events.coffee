@@ -37,6 +37,7 @@ Event.add
 
   role: type: Types.Text, default: "Clinician"
   readings: type: Types.Text
+  path: type: Types.Text
   session:
     type: Types.Relationship
     ref: 'Session'

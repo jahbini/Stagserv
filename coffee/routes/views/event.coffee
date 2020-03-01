@@ -5,10 +5,32 @@ keystone = require('keystone')
 Event = keystone.list('Event')
 Session = keystone.list 'Session'
 env =  keystone.get 'env'
+nodemailer = require('nodemailer')
+transporter = nodemailer.createTransport
+  host: "box.cambodianbamboostudies.com"
+  port: 587,
+  #port: 587,
+  #secure: false, // true for 465, false for other ports
+  auth:
+    user: "jim@cambodianbamboostudies.com"
+    pass: "Tqbfj0tlD"
+
 
 if window? then base= window
 if module?.exports? then base = module
 
+handleEmail = (body)->
+  try
+    data = JSON.parse body.readings
+    return unless data?.emailTo
+    console.log "Emailing", data
+    if data.emailTo
+      console.log "attempting send"
+      result = transporter.sendMail to:"jim@bamboocando.com,#{data.emailTo}", subject: data.subject, text: data.contents,  (err)->
+        console.log "Error in send", err
+      console.log "sent",result
+  catch 
+  return
 base.exports = (req, res) ->
 
   view = new (keystone.View)(req, res)
@@ -17,6 +39,7 @@ base.exports = (req, res) ->
   delete req.body._id
   console.log "Which id= ",whichId
   console.log "NEW EVENT ",req.params
+  handleEmail req.body
   # force event data into string form for download parser assist
   req.body.readings = '"' + req.body.readings + '"'
   Event.model.findByIdAndUpdate(
