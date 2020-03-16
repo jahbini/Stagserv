@@ -30,10 +30,14 @@
     unlock: {
       type: Types.Text,
       "default": "6180339"
+    },
+    eMailCarbon: {
+      type: Types.Text,
+      "default": ""
     }
   });
 
-  UnitConfig.defaultColumns = 'loginPassword,unlock';
+  UnitConfig.defaultColumns = 'loginPassword,unlock,eMailCarbon';
 
   UnitConfig.register();
 
