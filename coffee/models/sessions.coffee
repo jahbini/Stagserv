@@ -38,6 +38,7 @@ Session.add
       
 
   readings: type: Types.Text
+  path: type: Types.Text
   events:
     type: Types.Relationship
     ref: 'Event'

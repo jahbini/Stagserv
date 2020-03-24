@@ -50,6 +50,9 @@
     readings: {
       type: Types.Text
     },
+    path: {
+      type: Types.Text
+    },
     events: {
       type: Types.Relationship,
       ref: 'Event',
@@ -76,6 +79,10 @@
     },
     accepted: {
       type: Types.Boolean
+    },
+    duration: {
+      type: Types.Number,
+      "default": 0
     },
     platformUUID: {
       type: Types.Text
