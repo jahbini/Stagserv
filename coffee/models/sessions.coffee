@@ -56,6 +56,8 @@ Session.add
   lockdownMode: type: Types.Boolean
   accepted:
     type: Types.Boolean
+  duration:
+    type: Types.Number , default: 0
     
   platformUUID: type: Types.Text
   platformIosVersion: Types.Text
