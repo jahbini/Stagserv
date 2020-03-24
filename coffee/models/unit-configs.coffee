@@ -22,5 +22,9 @@ UnitConfig.add
   unlock:
     type: Types.Text
     default: "6180339"
-UnitConfig.defaultColumns = 'loginPassword,unlock'
+  eMailCarbon:
+    type: Types.Text
+    default: ""
+
+UnitConfig.defaultColumns = 'loginPassword,unlock,eMailCarbon'
 UnitConfig.register()
