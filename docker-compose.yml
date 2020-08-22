@@ -1,17 +1,33 @@
 version: '2'
+
 services:
-  nginx:
-    image: ej52/alpine-nginx-proxy
+  nginx-proxy:
     restart: always
+    image: jwilder/nginx-proxy
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - "/etc/nginx/htpasswd:/etc/nginx/htpasswd"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/etc/nginx/certs"
+
+  letsencrypt-nginx-proxy-companion:
+    restart: always
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    volumes_from:
+      - "nginx-proxy"
+    environment:
+      - NGINX_DOCKER_GEN_CONTAINER=nginx-proxy
   web:
-    image: bamboojim/stagserv:v5
+    image: bamboojim/stagserv:latest
     volumes_from: 
      - app
-     - nginx
+     - nginx-proxy
     links:
       - db
     depends_on:
@@ -19,12 +35,13 @@ services:
       - app
     environment:
       - NODE_ENV=development
-      - VIRTUAL_HOST=sensor-test.tell140.com
+      - VIRTUAL_HOST=huntingtest.retrotope.com
+      - LETSENCRYPT_HOST=huntingtest.retrotope.com
       - VIRTUAL_PORT=3030
     expose:
       - 3030
   app:
-    image: bamboojim/stagapp:v3
+    image: bamboojim/stagapp:latest
     volumes: 
       - /Stagapp-master/public
   swagger:

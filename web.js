@@ -110,7 +110,7 @@
       'views': 'templates/views',
       'view engine': 'pug',
       'auto update': true,
-      'mongo': 'mongodb://localhost/StagServExpress',
+      'mongo': 'mongodb://localhost/RetrotopeClinic',
       'session': true,
       'auth': true,
       'user model': 'User',
