@@ -5,14 +5,14 @@ services:
     restart: always
     image: jwilder/nginx-proxy
     ports:
-      - "80:80"
+      - "8088:80"
       - "443:443"
     volumes:
-      - "/etc/nginx/htpasswd:/etc/nginx/htpasswd"
-      - "/etc/nginx/vhost.d"
+      - "./etc/nginx/htpasswd:/etc/nginx/htpasswd"
+      - "./etc/nginx/vhost.d:/etc/nginx/vhost.d"
       - "/usr/share/nginx/html"
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
-      - "/etc/nginx/certs"
+      - "./etc/nginx/certs:/etc/nginx/certs"
 
   letsencrypt-nginx-proxy-companion:
     restart: always
@@ -36,12 +36,13 @@ services:
     environment:
       - NODE_ENV=development
       - VIRTUAL_HOST=huntingtest.retrotope.com
+      - VIRTUAL_HOST=localhost
       - LETSENCRYPT_HOST=huntingtest.retrotope.com
       - VIRTUAL_PORT=3030
     expose:
       - 3030
   app:
-    image: bamboojim/stagapp:latest
+    image: jahbini/stagapp:four-point
     volumes: 
       - /Stagapp-master/public
   swagger:
