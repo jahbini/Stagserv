@@ -47,7 +47,8 @@ temp = (app) ->
   app.get '/logfile/:id', routes.views.logs
   app.put '/logfile/:id', routes.views.logs
   app.post '/logfile', routes.views.logs
-  app.get '/*', statics('/home/solo/stagapp/public/', 'index': 'index.html')
+  app.get '/*', statics('/home/retro/stagserv/public/', 'index': 'index.html')
+  console.log "serving public"
   return
 
 if window? then window.exports = temp # for the web

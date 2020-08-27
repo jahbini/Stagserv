@@ -21,7 +21,7 @@ if environment == 'production'
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost:23417/RetrotopeClinic'
+    'mongo': 'mongodb://db/RetrotopeClinic'
     'session': true
     'auth': true
     'user model': 'User'
@@ -47,7 +47,7 @@ else if environment == 'slave'
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost/RetrotopeClinic/?slaveOk=true'
+    'mongo': 'mongodb://db/RetrotopeClinic/?slaveOk=true'
     'session': true
     'auth': true
     'user model': 'User'
@@ -72,7 +72,7 @@ else if environment == 'testing'
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost/StagServExpress'
+    'mongo': 'mongodb://db/StagServExpress'
     'session': true
     'auth': true
     'user model': 'User'
@@ -99,7 +99,7 @@ else
     'views': 'templates/views'
     'view engine': 'pug'
     'auto update': true
-    'mongo': 'mongodb://localhost/RetrotopeClinic'
+    'mongo': 'mongodb://db/RetrotopeClinic'
     'session': true
     'auth': true
     'user model': 'User'

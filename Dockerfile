@@ -8,8 +8,11 @@ WORKDIR /Stagserv-master
 ADD package.json /Stagserv-master
 RUN npm install
 
-ADD . /Stagserv-master
 #RUN curl -LOu jahbini:Tqbfj0tlD https://github.com/jahbini/Stagserv/archive/master.zip && unzip master.zip && rm master.zip
-VOLUME /Stagserv-master/public
+ADD . /Stagserv-master
+RUN rm -fr /Stagserv-master/public
+RUN rm -rf /Stagserv-master/sessions
+RUN ls -lisa
+
 expose 3030
-CMD npm run start || sleep 500
+CMD npm run start ||sleep 500
