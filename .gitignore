@@ -1,6 +1,7 @@
 node_modules/
 .c9/
 *.log
+sessions/
 public
 *.swp
 .DS_Store

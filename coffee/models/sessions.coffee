@@ -63,6 +63,7 @@ Session.add
   platformUUID: type: Types.Text
   platformIosVersion: Types.Text
   applicationVersion: Types.Text
+  logonVersion: Types.Text
   # types desired from github issue stagapp:93 and 99
   SerialNoL: Types.Text
   SerialNoR: Types.Text
@@ -71,5 +72,5 @@ Session.add
   password: Types.Text
   
 
-Session.defaultColumns = 'captureDate|25%, accepted|10%, clinician, client, testID'
+Session.defaultColumns = 'captureDate|25%, accepted|10%, clinician, client, testID, duration'
 Session.register()
