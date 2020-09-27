@@ -2,14 +2,15 @@ version: '2'
 
 services:
   edit:
-       image: theiaide/theia
-       volumes:
-             - "../stagapp/public:/home/project:cached"
-       expose:
-         - 3000
-       environment:
-        - VIRTUAL_HOST=retrotope.411-source.com
-        - LETSENCRYPT_HOST=retrotope.411-source.com
+    restart: always
+    image: theiaide/theia
+    volumes:
+      - "./p:/home/application:cached"
+    expose:
+      - 3000
+    environment:
+      - VIRTUAL_HOST=retrotope.411-source.com
+      - LETSENCRYPT_HOST=retrotope.411-source.com
   nginx-proxy:
     restart: always
     image: jwilder/nginx-proxy
@@ -41,6 +42,7 @@ services:
     volumes:
       - "${PWD}/sessions:/Stagserv-master/sessions"
       - "/home/retro/stagapp/public:/Stagserv-master/public"
+      - "/home/retro/stagapp/app:/Stagserv-master/public/app"
     links:
       - db
     depends_on:

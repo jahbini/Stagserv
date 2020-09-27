@@ -34,6 +34,10 @@
     eMailCarbon: {
       type: Types.Text,
       "default": ""
+    },
+    preLoginText: {
+      type: Types.Html,
+      wysiwig: true
     }
   });
 

@@ -29,7 +29,8 @@ Protocol.add
     index: true
     unique: true
     default: "Other"
-  comments: type: Types.Text
+  summary: type: Types.Html, wysiwyg: true
+  comments: type: Types.Html, wysiwyg: true
 
   #showMileStones deprecated use gestureCapture
   gestureCapture: type: Types.Boolean

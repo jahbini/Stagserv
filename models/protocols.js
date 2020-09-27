@@ -38,8 +38,13 @@
       unique: true,
       "default": "Other"
     },
+    summary: {
+      type: Types.Html,
+      wysiwyg: true
+    },
     comments: {
-      type: Types.Text
+      type: Types.Html,
+      wysiwyg: true
     },
     gestureCapture: {
       type: Types.Boolean

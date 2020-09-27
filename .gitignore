@@ -1,4 +1,5 @@
 node_modules/
+etc/nginx/certs
 .c9/
 *.log
 public
